@@ -151,3 +151,21 @@
     margin-left: 80%;
   }
 }
+
+@media screen and (max-width: 1150px) { 
+  .eTitle {
+    font-size: 4rem;
+  }
+}  
+
+@media screen and (max-width: 1000px) { 
+  .eTitle {
+    font-size: 3rem;
+  }
+}   
+
+@media screen and (max-width: 400px) { 
+  .eTitle {
+    font-size: 2.5rem;
+  }
+}  

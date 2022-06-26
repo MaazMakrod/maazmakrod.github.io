@@ -103,3 +103,20 @@
     }
   }
   
+  @media screen and (max-width: 1150px) { 
+    .aTitle {
+      font-size: 4rem;
+    }
+  }  
+  
+  @media screen and (max-width: 1000px) { 
+    .aTitle {
+      font-size: 3rem;
+    }
+  }   
+  
+  @media screen and (max-width: 400px) { 
+    .aTitle {
+      font-size: 2.5rem;
+    }
+  }  
