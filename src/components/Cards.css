@@ -155,14 +155,14 @@
   }
 
   @media screen and (max-width: 1150px) { 
-    .card > h1 {
-      font-size: 4rem;
+    .card > h1, .projLink {
+      font-size: 4rem !important;
     }
   }  
 
   @media screen and (max-width: 1000px) { 
-    .card > h1 {
-      font-size: 3rem;
+    .card > h1, .projLink {
+      font-size: 3rem !important;
     }
 
     .card {
@@ -193,7 +193,7 @@
   }  
 
   @media screen and (max-width: 400px) { 
-    .card > h1 {
-      font-size: 2.5rem;
+    .card > h1, .projLink {
+      font-size: 2.5rem !important;
     }
   }  

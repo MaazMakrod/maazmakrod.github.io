@@ -199,14 +199,12 @@
 
 .topLeft {
   position: relative;
-  bottom: 5%;
-  right: 25%;
+  right: 20%;
 }
 
 .bottomRight{
   position: relative;
-  top: 45%;
-  left: 30%;
+  left: 20%;
 }
 
 @media screen and (max-width: 750px) { 
@@ -224,5 +222,17 @@
 @media screen and (max-width: 500px) { 
   .testDiv {
     font-size: 1.5rem;
+  }
+
+  .topLeft {
+    right: 10%;
+    margin-bottom: 15% !important;
+    margin-top: 15% !important;
+  }
+  
+  .bottomRight{
+    left: 10%;
+    margin-top: 15% !important;
+    margin-bottom: 15% !important;
   }
 }

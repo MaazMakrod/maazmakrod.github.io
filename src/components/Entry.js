@@ -31,10 +31,10 @@ const Entry = () => {
             </div>
             
             <div className='testDiv'>
-                <span data-aos="zoom-out-up" style={{ margin: "2.5%", position: 'relative', right: '20%'}}>software developer,</span>
-                <span data-aos="zoom-out-right" style={{ margin: "2.5%", position: 'relative', left: '20%'}}>future engineer,</span> 
-                <span data-aos="zoom-out-left" style={{ margin: "2.5%", position: 'relative', right: '20%'}}>avid book reader,</span>
-                <span data-aos="zoom-out-down" style={{ margin: "2.5%", position: 'relative', left: '20%'}}>and problem solver.</span>
+                <span data-aos="zoom-out-up" className='topLeft' style={{ margin: "2.5%" }}>software developer,</span>
+                <span data-aos="zoom-out-right" className='bottomRight' style={{ margin: "2.5%" }}>future engineer,</span> 
+                <span data-aos="zoom-out-left" className='topLeft' style={{ margin: "2.5%" }}>avid book reader,</span>
+                <span data-aos="zoom-out-down" className='bottomRight' style={{ margin: "2.5%" }}>and problem solver.</span>
             </div>
 
             <div className='testDiv' data-aos="fade-right" data-aos-easing="ease-in-back" data-aos-duration="1000" data-aos-offset="0">
