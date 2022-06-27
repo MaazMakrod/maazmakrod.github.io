@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/static/css/main.cc4c7d81.css",
+    "main.css": "/static/css/main.bbd2691f.css",
     "main.js": "/static/js/main.b5256486.js",
     "static/media/forest.png": "/static/media/forest.c3c33d3ebd772a58b14b.png",
     "static/media/comet-mountain.jpg": "/static/media/comet-mountain.50388e3bd20e73ab39bb.jpg",
@@ -14,11 +14,11 @@
     "static/media/blogger.png": "/static/media/blogger.aff6c4f427c9cd1469e3.png",
     "static/media/apollo.png": "/static/media/apollo.781182fa7b383d5b4899.png",
     "index.html": "/index.html",
-    "main.cc4c7d81.css.map": "/static/css/main.cc4c7d81.css.map",
+    "main.bbd2691f.css.map": "/static/css/main.bbd2691f.css.map",
     "main.b5256486.js.map": "/static/js/main.b5256486.js.map"
   },
   "entrypoints": [
-    "static/css/main.cc4c7d81.css",
+    "static/css/main.bbd2691f.css",
     "static/js/main.b5256486.js"
   ]
 }
