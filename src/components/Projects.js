@@ -140,8 +140,8 @@ const Projects = () => {
                     </div>
                 </div>
                 
-                <div class="card projLink moveDown" data-aos="zoom-in" data-aos-duration="3000">
-                    <a href='https://github.com/maazmakrod' target='_blank'>See More Projects on my GitHub</a>
+                <div class="projLink moveDown" data-aos="zoom-in" data-aos-duration="3000">
+                    <a href='https://github.com/maazmakrod' target='_blank' style={{ textDecoration: 'none' }}>See More Projects on my GitHub</a>
                 </div>
 
             </div>

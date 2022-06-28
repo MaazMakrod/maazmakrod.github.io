@@ -34,6 +34,8 @@
     justify-content: space-evenly;
     flex-wrap: wrap;
     min-height: fit-content;
+    height: fit-content;
+    margin-bottom: 10vh;
   }
 
   .moveUp {
@@ -80,15 +82,23 @@
   }
 
   .projLink {
-    background-color: transparent;
     font-size: 3rem !important;
-    border-radius: 5px;
-    border: 5px solid white;
+    background-color: white;
     text-align: center;
     vertical-align: middle;
     line-height: normal;
     min-height: fit-content;
     height: fit-content;
+    mix-blend-mode: screen;
+    margin-bottom: 5%;
+    padding: 1%;
+    border: 5px solid #e09f6a;
+    border-radius: 5px;
+    transition: 0.5s;
+  }
+
+  .projLink:hover {
+    background-color: #e09f6a;
   }
 
   .card-header img {
@@ -155,14 +165,22 @@
   }
 
   @media screen and (max-width: 1150px) { 
-    .card > h1, .projLink {
+    .card > h1 {
       font-size: 4rem !important;
+    }
+
+    .projLink {
+      font-size: 2.5rem !important;
     }
   }  
 
   @media screen and (max-width: 1000px) { 
-    .card > h1, .projLink {
+    .card > h1 {
       font-size: 3rem !important;
+    }
+
+    .projLink {
+      font-size: 2rem !important;
     }
 
     .card {
@@ -193,7 +211,11 @@
   }  
 
   @media screen and (max-width: 400px) { 
-    .card > h1, .projLink {
+    .card > h1 {
       font-size: 2.5rem !important;
+    }
+
+    .projLink {
+      font-size: 1.5rem !important;
     }
   }  
