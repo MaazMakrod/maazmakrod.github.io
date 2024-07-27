@@ -29,6 +29,7 @@ type BlobOptionsBase = {
   };
   blobMovementOptions?: {
     animationOptions?: AnimationOptions;
+    customAnimationName?: string;
     [key: number]: Styles<object>;
   };
   growScale?: number;
@@ -94,6 +95,7 @@ const buildAnimationString = (
   animateBlobPosition: boolean,
   pulseOptions?: AnimationOptions,
   blobOptions?: AnimationOptions,
+  customBlobAnimationName?: string,
   customAnimations?: Array<CustomAnimation>,
 ): string => {
   const animations = [];
@@ -106,7 +108,7 @@ const buildAnimationString = (
 
   if (animateBlobPosition) {
     animations.push(
-      `blobMovement  ${blobOptions?.timing ?? "10000"}ms ${blobOptions?.options}`,
+      `${customBlobAnimationName ?? 'blobMovement'}  ${blobOptions?.timing ?? "10000"}ms ${blobOptions?.options}`,
     );
   }
 
@@ -197,10 +199,10 @@ const styleBlob = (options?: BlobOptions) => {
 
   if (animateBlobPosition) {
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    const { animationOptions, ...customMovement } = blobMovementOptions ?? {};
+    const { animationOptions, customAnimationName, ...customMovement } = blobMovementOptions ?? {};
 
-    if (Object.keys(customMovement).length > 0) {
-      rules.push(buildCustomAnimation("blobMovement", customMovement));
+    if (Object.keys(customMovement).length > 0 && customAnimationName) {
+      rules.push(buildCustomAnimation(customAnimationName, customMovement));
     } else {
       rules.push(blobMovementAnimation);
     }
@@ -277,6 +279,7 @@ const styleBlob = (options?: BlobOptions) => {
         animateBlobPosition,
         pulseOptions?.animationOptions,
         blobMovementOptions?.animationOptions,
+        blobMovementOptions?.customAnimationName,
         customAnimations,
       )};
       animation-play-state: paused;

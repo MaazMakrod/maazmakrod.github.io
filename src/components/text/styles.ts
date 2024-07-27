@@ -6,6 +6,7 @@ import {
   StylesValue,
 } from "../../styles/helpers";
 import { TypesOptions } from "./Text";
+import { FONT_TYPES } from "../../styles/theme";
 
 const fadeIn = css`
   @keyframes fadeInUp {
@@ -45,83 +46,6 @@ const buildAnimationString = (underline: boolean, fade: boolean): string => {
   return animations.join(", ");
 };
 
-const fontTypes = {
-  h1: {
-    "font-size": {
-      [BREAKPOINTS.DEFAULT]: "2rem",
-      [BREAKPOINTS.MEDIUM]: "2.5rem",
-      [BREAKPOINTS.LARGE]: "3rem",
-    },
-  },
-  h2: {
-    "font-size": {
-      [BREAKPOINTS.DEFAULT]: "1.5625rem",
-      [BREAKPOINTS.MEDIUM]: "1.75rem",
-      [BREAKPOINTS.LARGE]: "2rem",
-    },
-  },
-  h3: {
-    "font-size": {
-      [BREAKPOINTS.DEFAULT]: "1.25rem",
-      [BREAKPOINTS.MEDIUM]: "1.375rem",
-      [BREAKPOINTS.LARGE]: "1.5625rem",
-    },
-  },
-  h4: {
-    "font-size": {
-      [BREAKPOINTS.DEFAULT]: "1rem",
-      [BREAKPOINTS.MEDIUM]: "1.125rem",
-      [BREAKPOINTS.LARGE]: "1.25rem",
-    },
-  },
-  h5: {
-    "font-size": {
-      [BREAKPOINTS.DEFAULT]: "0.75rem",
-      [BREAKPOINTS.MEDIUM]: "0.825rem",
-      [BREAKPOINTS.LARGE]: "1rem",
-    },
-  },
-  h6: {
-    "font-size": {
-      [BREAKPOINTS.DEFAULT]: "0.5rem",
-      [BREAKPOINTS.MEDIUM]: "0.625rem",
-      [BREAKPOINTS.LARGE]: "0.75rem",
-    },
-  },
-  p: {
-    "font-size": {
-      [BREAKPOINTS.DEFAULT]: "0.875rem",
-      [BREAKPOINTS.LARGE]: "1rem",
-    },
-  },
-  pLarge: {
-    "font-size": {
-      [BREAKPOINTS.DEFAULT]: "1rem",
-      [BREAKPOINTS.LARGE]: "1.25rem",
-    },
-  },
-  thin: {
-    "font-weight": {
-      [BREAKPOINTS.DEFAULT]: "100",
-    },
-  },
-  regular: {
-    "font-weight": {
-      [BREAKPOINTS.DEFAULT]: "300",
-    },
-  },
-  medium: {
-    "font-weight": {
-      [BREAKPOINTS.DEFAULT]: "500",
-    },
-  },
-  bold: {
-    "font-weight": {
-      [BREAKPOINTS.DEFAULT]: "700",
-    },
-  },
-};
-
 const buildStyles = (
   types: Array<TypesOptions> | undefined,
   underline?: boolean,
@@ -143,7 +67,7 @@ const buildStyles = (
   });
 
   for (const type of types) {
-    styles = mapStylesValuesToBreakpoints(fontTypes[type], styles);
+    styles = mapStylesValuesToBreakpoints(FONT_TYPES[type], styles);
   }
 
   if (underline && underlineColor && underlineSize) {

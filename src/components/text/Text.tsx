@@ -115,7 +115,7 @@ const StyledText = styled.div<
     | "underlineSize"
   >
 >`
-  font-family: sans-serif;
+  font-family: "Raleway", "sans-serif";
   box-sizing: border-box;
 
   ${(props) =>

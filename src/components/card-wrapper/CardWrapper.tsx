@@ -68,6 +68,7 @@ const CardWrapper: React.FC<CardWrapperProps> = ({
   if (overlay) {
     return (
       <StyledCardWrapper {...cardProps} as={as} {...cardArgs}>
+        {icon && <Icon {...icon} parentHover={hover} />}
         <StyledOverlay className="overlay">
           <StyledContentWrapper padding={padding} centerContent={centerContent}>
             {overlay}
@@ -78,7 +79,6 @@ const CardWrapper: React.FC<CardWrapperProps> = ({
           backgroundColor={overlayBackgroundColor}
         >
           <StyledContentWrapper padding={padding} centerContent={centerContent}>
-            {icon && <Icon {...icon} parentHover={hover} />}
             {children}
           </StyledContentWrapper>
         </StyledOverlayContent>
