@@ -10,8 +10,10 @@ const Footer = () => {
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'space-between',
-    alignItems: 'center',
-    paddingTop: '5px'
+    alignItems: 'end',
+    paddingTop: '5px',
+    flexGrow: '1',
+    paddingBottom: '10px',
   }}>
       <Text text={`© Maaz Makrod, ${new Date().getFullYear()}`} tagName="p" types={['p', 'bold']} color={COLORS.primary} margin="0" />
       <div style={{
@@ -35,6 +37,7 @@ const Footer = () => {
             timing: 500,
             filter: `drop-shadow(2px 5px 10px ${COLORS.accent})`,
           }}
+          target="_blank"
         />
         <Icon 
           SvgImage={Link}

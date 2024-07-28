@@ -62,7 +62,7 @@ const StyledMenuItem = styled.li<{
   transition: all 200ms ease;
 
   ${props => props.disableHover ? '' : `
-    :hover {
+    &:hover {
       color: ${COLORS.accent};
     }  
   `}
@@ -72,13 +72,13 @@ const StyledMenuItems = styled.ul<{
   opened: boolean;
 }>`
   list-style: none;
-  background-color: #546e9d;
+  background-color: ${COLORS.background};
   width: 100%;
   height: 100vh;
   transform: ${props => props.opened ? 'translateX(0)' : 'translate(-150%)'};
   display: flex;
   flex-direction: column;
-  transition: transform 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
   text-align: center;
   justify-content: center;
   margin: 0;
@@ -93,7 +93,7 @@ const StyledHamburgerLine = styled.span`
   height: 4px;
   width: 100%;
   border-radius: 10px;
-  background: ${COLORS.primary};
+  background: inherit;
 `;
 
 const StyledHamburger = styled.button<{
@@ -115,23 +115,40 @@ const StyledHamburger = styled.button<{
 
   :nth-child(1) {
     transform-origin: 0% 0%;
+    background: ${COLORS.primary};
     transform: ${props => props.opened ? 'rotate(45deg)' : 'rotate(0deg)'};
-    transition: transform 0.4s ease-in-out;
+    transition: transform 0.4s ease-in-out, background 0.2s ease-in-out;
   }
 
   :nth-child(2) {
     transform: ${props => props.opened ? 'scaleY(0)' : 'scaleY(1)'};
-    transition: transform 0.2s ease-in-out;
+    background: ${COLORS.primary};
+    transition: transform 0.2s ease-in-out, background 0.4s ease-in-out;
   }
 
   :nth-child(3) {
     transform-origin: 0% 100%;
+    background: ${COLORS.primary};
     transform: ${props => props.opened ? 'rotate(-45deg)' : 'rotate(0deg)'};
-    transition: transform 0.4s ease-in-out;
+    transition: transform 0.4s ease-in-out, background 0.6s ease-in-out;
+  }
+
+  &:hover {
+    :nth-child(1) {
+      background: ${COLORS.accent};
+    }
+    
+    :nth-child(2) {
+      background: ${COLORS.accent};
+    }
+
+    :nth-child(3) {
+      background: ${COLORS.accent};
+    }
   }
 `;
 
-const StyledNavigation = styled.div`
+const StyledNavigation = styled.nav`
   width: 100%;
   margin-bottom: 10px;
   display: flex;
