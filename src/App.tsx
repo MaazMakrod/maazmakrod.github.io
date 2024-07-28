@@ -8,6 +8,7 @@ import mail from './assets/mail.svg';
 import { COLORS } from './styles/theme';
 import { Link } from './icons';
 import { Navigation } from './components/navigation';
+import { Footer } from './components/footer';
 
 function App() {
   const homePageArgs = {
@@ -617,6 +618,7 @@ function App() {
         }
       ]}/>
       <CardGrid {...homePageArgs} />
+      <Footer />
     </>
   )
 }
