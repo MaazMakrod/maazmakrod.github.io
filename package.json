@@ -5,9 +5,11 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "dev-host": "vite --host",
     "build": "tsc -b && vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "process-svgs": "npx @svgr/cli --out-dir ./src/icons --filename-case kebab --typescript -- ./src/icons/files"
   },
   "dependencies": {
     "react": "^18.3.1",

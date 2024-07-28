@@ -16,6 +16,7 @@ export type ImageCardProps = {
   objectFit?: string;
   imageWidth: StylesValue;
   imageHeight: StylesValue;
+  lazyLoad?: boolean;
 };
 
 const ImageCard: React.FC<ImageCardProps> = ({
@@ -26,6 +27,7 @@ const ImageCard: React.FC<ImageCardProps> = ({
   objectFit,
   imageWidth = { [BREAKPOINTS.DEFAULT]: "100%" },
   imageHeight = { [BREAKPOINTS.DEFAULT]: "100%" },
+  lazyLoad,
 }) => {
   return (
     <CardWrapper {...cardWrapperProps}>
@@ -36,6 +38,7 @@ const ImageCard: React.FC<ImageCardProps> = ({
         objectFit={objectFit}
         imageWidth={imageWidth}
         imageHeight={imageHeight}
+        {...(lazyLoad && {loading: "lazy"})}
       />
     </CardWrapper>
   );

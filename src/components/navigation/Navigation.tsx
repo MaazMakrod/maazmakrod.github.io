@@ -13,6 +13,8 @@ export type NavigationProps = {
   links: NavLink[];
 };
 
+export const NAVIGATION_HEIGHT = '75px';
+
 const Navigation: React.FC<NavigationProps> = ({
   links
 }) => {
@@ -149,12 +151,14 @@ const StyledHamburger = styled.button<{
 `;
 
 const StyledNavigation = styled.nav`
+  box-sizing: border-box;
   width: 100%;
-  margin-bottom: 10px;
+  padding-top: 20px;
+  padding-bottom: 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 62px;
+  height: ${NAVIGATION_HEIGHT};
   z-index: 10;
   position: relative;
 `;

@@ -9,6 +9,8 @@ import { COLORS } from './styles/theme';
 import { Link } from './icons';
 import { Navigation } from './components/navigation';
 import { Footer } from './components/footer';
+import { FOOTER_HEIGHT } from './components/footer/Footer';
+import { NAVIGATION_HEIGHT } from './components/navigation/Navigation';
 
 function App() {
   const homePageArgs = {
@@ -16,7 +18,7 @@ function App() {
       [BREAKPOINTS.DEFAULT]: "min(95vw, 1600px)",
     },
     height: {
-      [BREAKPOINTS.DEFAULT]: "80vh",
+      [BREAKPOINTS.DEFAULT]: `calc(100vh - ${FOOTER_HEIGHT} - ${NAVIGATION_HEIGHT})`,
     },
     numberRows: {
       [BREAKPOINTS.DEFAULT]: "3",
@@ -39,6 +41,7 @@ function App() {
             imageWidth={{ [BREAKPOINTS.DEFAULT]: '100%'}}
             imageHeight={{ [BREAKPOINTS.DEFAULT]: '100%'}}
             objectFit='cover'
+            lazyLoad
             cardWrapperProps={{
               backgroundColor: COLORS.quinary,
               width: { [BREAKPOINTS.DEFAULT]: "auto" },
@@ -235,6 +238,7 @@ function App() {
             imageWidth={{ [BREAKPOINTS.DEFAULT]: '100%'}}
             imageHeight={{ [BREAKPOINTS.DEFAULT]: '100%'}}
             objectFit='fill'
+            lazyLoad
             cardWrapperProps={{
               backgroundColor: COLORS.quinary,
               width: { [BREAKPOINTS.DEFAULT]: "100%" },
@@ -352,6 +356,7 @@ function App() {
             imageWidth={{ [BREAKPOINTS.DEFAULT]: '100%'}}
             imageHeight={{ [BREAKPOINTS.DEFAULT]: '100%'}}
             objectFit='fill'
+            lazyLoad
             cardWrapperProps={{
               backgroundColor: COLORS.primary,
               width: { [BREAKPOINTS.DEFAULT]: "100%" },
