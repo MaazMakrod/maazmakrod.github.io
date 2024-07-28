@@ -598,7 +598,24 @@ function App() {
 
   return (
     <>
-      <Navigation text='testsdssdskjfdajkh'/>
+      <Navigation links={[
+        {
+          text: 'Home',
+          url: '/',
+        },
+        {
+          text: 'Experience',
+          url: '/',
+        },
+        {
+          text: 'Projects',
+          url: '/',
+        },
+        {
+          text: 'About',
+          url: '/',
+        }
+      ]}/>
       <CardGrid {...homePageArgs} />
     </>
   )
