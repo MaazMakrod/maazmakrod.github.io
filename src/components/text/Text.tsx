@@ -41,6 +41,7 @@ type TextOptions = {
   underlineSize?: StylesValue;
   url?: string;
   target?: string;
+  disabled?: boolean;
 };
 
 export type TextProps = TextOptions & {
@@ -67,6 +68,7 @@ const parseText = (data: TextObject): ReactNode => {
     underlineSize,
     url,
     target,
+    disabled,
   } = data.content;
 
   return (
@@ -80,6 +82,7 @@ const parseText = (data: TextObject): ReactNode => {
       margin={margin}
       underlineColor={underlineColor}
       underlineSize={underlineSize}
+      disabled={disabled}
       {...(tagName === "a" && { href: url, target: target })}
     >
       {text}
@@ -113,6 +116,7 @@ const StyledText = styled.div<
     | "margin"
     | "underlineColor"
     | "underlineSize"
+    | "disabled"
   >
 >`
   font-family: "Raleway", "sans-serif";
@@ -128,6 +132,7 @@ const StyledText = styled.div<
       props.margin,
       props.underlineColor,
       props.underlineSize,
+      props.disabled,
     )}
 `;
 

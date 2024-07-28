@@ -55,6 +55,7 @@ const buildStyles = (
   margin?: string,
   underlineColor?: string,
   underlineSize?: StylesValue,
+  disabled?: boolean,
 ) => {
   if (!types) return;
 
@@ -115,6 +116,7 @@ const buildStyles = (
     animation: buildAnimationString(!!underline, !!fade),
     "animation-fill-mode": "forwards",
     transition: "all 0.3s",
+    ...(disabled && {'pointer-events': 'none'}),
   };
 
   rules.push(...mapCssToBreakpoints(styles));

@@ -9,6 +9,7 @@ export type TextCardProps = {
   horizontalPosition?: "left" | "middle" | "right";
   verticalPosition?: "top" | "middle" | "bottom";
   useFlex?: boolean;
+  flexDir?: string;
 };
 
 const positionToFlexName = (position: string = "") => {
@@ -29,6 +30,7 @@ const TextCard: React.FC<TextCardProps> = ({
   horizontalPosition,
   verticalPosition,
   useFlex = true,
+  flexDir,
 }) => {
   return (
     <CardWrapper {...cardWrapperProps}>
@@ -36,6 +38,7 @@ const TextCard: React.FC<TextCardProps> = ({
         useFlex={useFlex}
         horizontal={positionToFlexName(horizontalPosition)}
         vertical={positionToFlexName(verticalPosition)}
+        flexDir={flexDir}
       >
         {textProps.map((args, i) => (
           <Text
@@ -52,6 +55,7 @@ const StyledTextContainer = styled.div<{
   horizontal: string;
   vertical: string;
   useFlex: boolean;
+  flexDir?: string;
 }>`
   width: 100%;
   height: 100%;
@@ -64,6 +68,7 @@ const StyledTextContainer = styled.div<{
       justify-content: ${props.horizontal};
       align-items: ${props.vertical};
       text-align:  ${props.horizontal === 'flex-end' ? 'right' : 'left'};
+      ${props.flexDir ? `flex-direction: ${props.flexDir};`: ''}
     `
       : ""}
 `;

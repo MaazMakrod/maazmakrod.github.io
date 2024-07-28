@@ -12,6 +12,11 @@ export const COLORS = {
     background: '#546e9d',
 }
 
+export const NAVIGATION_HEIGHT = '75px';
+export const FOOTER_HEIGHT = '55px';
+export const CONTENT_WIDTH = 'min(95vw, 1600px)';
+export const CONTENT_HEIGHT = `calc(100vh - ${FOOTER_HEIGHT} - ${NAVIGATION_HEIGHT})`;
+
 export const FONT_TYPES = {
     h1: {
       "font-size": {

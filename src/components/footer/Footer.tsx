@@ -1,38 +1,27 @@
 import styled from "styled-components";
-import { File, Github, Linkedin, Mail } from "../../icons";
 import { BREAKPOINTS } from "../../styles/helpers";
-import { COLORS } from "../../styles/theme";
+import { COLORS, FOOTER_HEIGHT } from "../../styles/theme";
 import { Icon } from "../icon";
 import { Text } from "../text";
 
-const FOOTER_LINKS = [
-  {
-    svg: Linkedin,
-    url: "https://www.linkedin.com/in/maaz-makrod/",
-  },
-  {
-    svg: Github,
-    url: "https://github.com/maazmakrod",
-  },
-  {
-    svg: Mail,
-    url: "mailto:maaz.makrod@gmail.com",
-  },
-  {
-    svg: File,
-    url: "https://www.linkedin.com/in/maaz-makrod/",
-  },
-];
+type FooterLink = {
+  svg: React.FC;
+  url: string;
+}
 
-export const FOOTER_HEIGHT = '55px';
+export type FooterProps = {
+  links: FooterLink[];
+};
 
-const Footer = () => {
+const Footer: React.FC<FooterProps> = ({
+  links
+}) => {
   return (
   <StyeldFooter>
       <Text text={`© Maaz Makrod, ${new Date().getFullYear()}`} tagName="p" types={['p', 'bold']} color={COLORS.primary} margin="0" />
       <StyledFooterLinks>
         {
-          FOOTER_LINKS.map(link => (
+          links.map(link => (
             <Icon 
               SvgImage={link.svg}
               tag="a"

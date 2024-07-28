@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { Text } from "../text";
-import { COLORS } from "../../styles/theme";
-
+import { COLORS, NAVIGATION_HEIGHT } from "../../styles/theme";
+import { PathMatch } from "react-router-dom";
 type NavLink = {
   text: string;
   url: string;
@@ -11,12 +11,14 @@ type NavLink = {
 
 export type NavigationProps = {
   links: NavLink[];
+  activeLink: {
+    [key: string]: PathMatch<string> | null;
+  }
 };
 
-export const NAVIGATION_HEIGHT = '75px';
-
 const Navigation: React.FC<NavigationProps> = ({
-  links
+  links,
+  activeLink,
 }) => {
   const [opened, setOpened] = useState(false);
 
@@ -26,31 +28,40 @@ const Navigation: React.FC<NavigationProps> = ({
         <StyledHamburgerLine />
         <StyledHamburgerLine />
         <StyledHamburgerLine />
-      </StyledHamburger> 
-      <StyledMenuItem as="div" disableHover={true}>
+      </StyledHamburger>
+
+      <StyledMenuItem as="div" active={Boolean(activeLink[links?.[0]?.text])}>
         <Text
           text="Maaz Makrod"
           types={['h1', 'bold']}
           tagName="a"
           url="/"
           margin="0"
-          color={COLORS.primary}
+          color="inherit"
+          disabled={Boolean(activeLink[links?.[0]?.text])}
         />
       </StyledMenuItem>
 
       <StyledMenuItems opened={opened}>
         {
-          links.map((link, index) => (
-            <StyledMenuItem key={`nav-link-${index}`} disableHover={link.disableHover}>
-              <Text 
-                text={link.text}
-                types={['h2', 'bold']}
-                tagName="a"
-                url={link.url}
-                color="inherit"
-              />
-            </StyledMenuItem>
-          ))
+          links.map((link, index) => {
+            return (
+              <StyledMenuItem
+                key={`nav-link-${index}`}
+                disableHover={link.disableHover}
+                active={Boolean(activeLink[link.text])}
+              >
+                <Text 
+                  text={link.text}
+                  types={['h2', 'bold']}
+                  tagName="a"
+                  url={link.url}
+                  color="inherit"
+                  disabled={Boolean(activeLink[link.text])}
+                />
+              </StyledMenuItem>
+            )
+          })
         }
       </StyledMenuItems>
     </StyledNavigation>
@@ -59,8 +70,9 @@ const Navigation: React.FC<NavigationProps> = ({
 
 const StyledMenuItem = styled.li<{
   disableHover?: boolean;
+  active?: boolean;
 }>`
-  color: ${COLORS.primary};
+  color: ${props => props.active ? COLORS.accent : COLORS.primary};
   transition: all 200ms ease;
 
   ${props => props.disableHover ? '' : `
