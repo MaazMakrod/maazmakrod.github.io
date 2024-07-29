@@ -95,7 +95,6 @@ const composeTabArgs = (
   };
 };
 
-// TODO: Remove use of gen random key function
 const TabCard: React.FC<TabCardProps> = ({ tabs, tabButtonStyle }) => {
   const [active, setActive] = useState<number>(0);
   const handleTabChange = (i: number) => setActive(i);

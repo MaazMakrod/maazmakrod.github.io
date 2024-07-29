@@ -12,6 +12,18 @@ import {
 import { css } from "styled-components";
 import { RuleSet, Styles } from "styled-components/dist/types";
 
+export type PulseOptions = {
+  color: string;
+  spread?: string;
+  animationOptions?: AnimationOptions;
+};
+
+export type BlobMovementOptions = {
+  animationOptions?: AnimationOptions;
+  customAnimationName?: string;
+  [key: number]: Styles<object>;
+};
+
 type BlobOptionsBase = {
   animateBlobPosition?: boolean;
   growBlob?: boolean;
@@ -22,16 +34,8 @@ type BlobOptionsBase = {
   outline?: string;
   width?: StylesValue;
   height?: StylesValue;
-  pulseOptions?: {
-    color: string;
-    spread?: string;
-    animationOptions?: AnimationOptions;
-  };
-  blobMovementOptions?: {
-    animationOptions?: AnimationOptions;
-    customAnimationName?: string;
-    [key: number]: Styles<object>;
-  };
+  pulseOptions?: PulseOptions;
+  blobMovementOptions?: BlobMovementOptions;
   growScale?: number;
   customAnimations?: Array<CustomAnimation>;
 };
