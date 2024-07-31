@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import Text from "../text/Text";
 import { BREAKPOINTS } from "../../styles/helpers";
 
@@ -7,6 +6,8 @@ export type DetailsProps = {
   position: string;
   description: string;
   underlineColor: string;
+  textColor: string;
+  positionLength: string;
 };
 
 const DetailsCard: React.FC<DetailsProps> = ({
@@ -14,6 +15,8 @@ const DetailsCard: React.FC<DetailsProps> = ({
   position,
   description,
   underlineColor,
+  textColor,
+  positionLength,
 }) => {
   return (
     <div>
@@ -26,10 +29,11 @@ const DetailsCard: React.FC<DetailsProps> = ({
         underline
         underlineColor={underlineColor}
         underlineSize={{ [BREAKPOINTS.DEFAULT]: "3px" }}
+        color={textColor}
       />
-      <Text text={position} tagName="h2" types={["h6"]} uppercase fade />
-      <Text text="16 Months" tagName="p" types={["p"]} fade />
-      <Text text={description} tagName="p" types={["pLarge"]} fade />
+      <Text text={position} color={textColor} tagName="h2" types={["h6"]} uppercase fade />
+      <Text text={positionLength} color={textColor} tagName="p" types={["p"]} fade />
+      <Text text={description} color={textColor} tagName="p" types={["pLarge"]} fade />
     </div>
   );
 };

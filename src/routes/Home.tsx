@@ -7,7 +7,7 @@ import file from '../assets/file.svg';
 import mail from '../assets/mail.svg';
 import { COLORS, CONTENT_HEIGHT, CONTENT_WIDTH } from '../styles/theme';
 import { Link } from '../icons';
-import { generateCardWrapperProps } from '../utils/propHelpers';
+import { generateCardWrapperProps, ICON_DEFAULT_PROPS } from '../utils/propHelpers';
 import { CardWrapperProps } from '../components/card-wrapper/CardWrapper';
 
 function Home() {
@@ -67,22 +67,33 @@ function Home() {
                 }
               }
             ]}
-            cardWrapperProps={generateCardWrapperProps('primary', '10px', {
-                blob: true,
-                blobAnimations: {
-                  animateBlobPosition: true,
-                  pulseBlob: true,
-                  growBlob: true
+            cardWrapperProps={{
+              ...generateCardWrapperProps('primary', '10px', {
+                  blob: true,
+                  blobAnimations: {
+                    animateBlobPosition: true,
+                    pulseBlob: true,
+                    growBlob: true
+                  },
+                  blobSize: 'medium',
+                  blobPosition: {
+                    bottom: -30,
+                    left: 0,
+                  },
+                  startingBlobShape: 0,
                 },
-                blobSize: 'medium',
-                blobPosition: {
-                  bottom: -30,
-                  left: 0,
-                },
-                startingBlobShape: 0,
-              },
-              true
-            ) as CardWrapperProps}
+                true
+              ) as CardWrapperProps,
+              icon: {
+                ...ICON_DEFAULT_PROPS['primary'],
+                SvgImage: Link,
+                url: '/about',
+                position: {
+                  bottom: 5,
+                  right: 10,
+                }
+              }              
+            }}
           />
       },
       {
@@ -107,22 +118,33 @@ function Home() {
                 }
               }
             ]}
-            cardWrapperProps={generateCardWrapperProps('secondary', '10px', {
-                blob: true,
-                blobAnimations: {
-                  animateBlobPosition: true,
-                  pulseBlob: true,
-                  growBlob: true
-                },
-                blobSize: 'large',
-                blobPosition: {
-                  right: 0,
+            cardWrapperProps={{
+              ...generateCardWrapperProps('secondary', '10px', {
+                  blob: true,
+                  blobAnimations: {
+                    animateBlobPosition: true,
+                    pulseBlob: true,
+                    growBlob: true
+                  },
+                  blobSize: 'large',
+                  blobPosition: {
+                    right: 0,
+                    top: 5,
+                  },
+                  startingBlobShape: 1,
+                  blobMovementOptions: 0
+                }, true
+              ) as CardWrapperProps,
+              icon: {
+                ...ICON_DEFAULT_PROPS['primary'],
+                SvgImage: Link,
+                url: '/experience',
+                position: {
                   top: 5,
-                },
-                startingBlobShape: 1,
-                blobMovementOptions: 0
-              }, true
-            ) as CardWrapperProps}
+                  left: 5,
+                }
+              }
+            }}
           />
       },
       {
@@ -147,26 +169,12 @@ function Home() {
               }),
               icon: {
                 SvgImage: Link,
-                width: {
-                  [BREAKPOINTS.DEFAULT]: '20px'
-                },
-                height: {
-                  [BREAKPOINTS.DEFAULT]: '20px'
-                },
                 url: 'mailto:maaz.makrod@gmail.com',
-                color: COLORS.quaternary,
                 position: {
                   bottom: 10,
                   left: 10,
                 },
-                hoverOptions: {
-                  color: COLORS.accent,
-                  timing: 100,
-                  easingFunction: 'ease-in-out',
-                  filter: `drop-shadow(2px 5px 10px ${COLORS.accent})`,
-                },
-                tag: 'a',
-                zIndex: 10
+                ...ICON_DEFAULT_PROPS['primary']
               },
               overlay:<TextCard 
                   useFlex
@@ -241,26 +249,12 @@ function Home() {
               overlayBackgroundColor: COLORS.primary,
               icon: {
                 SvgImage: Link,
-                width: {
-                  [BREAKPOINTS.DEFAULT]: '20px'
-                },
-                height: {
-                  [BREAKPOINTS.DEFAULT]: '20px'
-                },
                 url: 'mailto:maaz.makrod@gmail.com',
-                color: COLORS.quaternary,
                 position: {
                   top: 10,
                   right: 10,
                 },
-                hoverOptions: {
-                  color: COLORS.accent,
-                  timing: 100,
-                  easingFunction: 'ease-in-out',
-                  filter: `drop-shadow(2px 5px 10px ${COLORS.accent})`,
-                },
-                tag: 'a',
-                zIndex: 10
+                ...ICON_DEFAULT_PROPS['primary'],
               },
               overlay:<TextCard 
                   useFlex

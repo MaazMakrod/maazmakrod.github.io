@@ -69,10 +69,9 @@ const StyeldFooter = styled.footer`
   padding-bottom: 10px;
   height: ${FOOTER_HEIGHT};
 
-  position: absolute;
-  bottom: 0;
   width: 100%;
   max-width: 1600px;
+  flex-grow: 1;
 `;
 
 export default Footer;

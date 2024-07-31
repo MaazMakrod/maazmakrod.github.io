@@ -230,3 +230,27 @@ export const generateCardWrapperProps = (
         },
     };
 }
+
+export const ICON_DEFAULT_PROPS = {
+    'primary': {
+        width: {
+            [BREAKPOINTS.DEFAULT]: '1rem',
+            [BREAKPOINTS.MEDIUM]: '1.5rem',
+            [BREAKPOINTS.LARGE]: '2rem',
+          },
+          height: {
+            [BREAKPOINTS.DEFAULT]: '1rem',
+            [BREAKPOINTS.MEDIUM]: '1.5rem',
+            [BREAKPOINTS.LARGE]: '2rem',
+          },
+          color: COLORS.quaternary,
+          hoverOptions: {
+            color: COLORS.accent,
+            timing: 100,
+            easingFunction: 'ease-in-out',
+            filter: `drop-shadow(2px 5px 10px ${COLORS.accent})`,
+          },
+          tag: 'a',
+          zIndex: 10
+    },
+};

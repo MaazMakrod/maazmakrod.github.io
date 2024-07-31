@@ -12,6 +12,7 @@ type TabButtonStyle = {
   buttonColor: string;
   buttonHoverColor: string;
   buttonBoxShadow: string;
+  textColor: string,
 };
 
 type DetailsCard = DetailsProps &
@@ -74,6 +75,8 @@ const composeTabArgs = (
               position={details.position}
               description={details.description}
               underlineColor={details.underlineColor}
+              textColor={details.textColor}
+              positionLength={details.positionLength}
             />
             <TechnologiesList
               technologies={details.technologies}
@@ -109,7 +112,7 @@ const TabCard: React.FC<TabCardProps> = ({ tabs, tabButtonStyle }) => {
             {...tabButtonStyle}
             onClick={() => handleTabChange(index)}
           >
-            <Text text={t.buttonText} tagName="span" types={["p", "bold"]} />
+            <Text color={tabButtonStyle.textColor} text={t.buttonText} tagName="span" types={["p", "bold"]} />
           </StyledTabItem>
         ))}
       </StyledTabItems>
@@ -169,7 +172,7 @@ const StyledTabItem = styled.button<
   min-width: 10rem;
   height: 2rem;
   background-color: ${(props) =>
-    props.active ? props.buttonColor : props.buttonHoverColor};
+    props.active ? props.buttonHoverColor : props.buttonColor};
 
   cursor: pointer;
   box-shadow: ${(props) => (props.active ? props.buttonBoxShadow : "")};
@@ -179,7 +182,7 @@ const StyledTabItem = styled.button<
     background-color 0.5s;
 
   &:hover {
-    background-color: ${(props) => props.buttonColor};
+    background-color: ${(props) => props.buttonHoverColor};
     box-shadow: ${(props) => props.buttonBoxShadow};
   }
 `;
@@ -198,7 +201,7 @@ const StyledTabContent = styled.div<{ active: boolean }>`
   grid-column-start: 1;
   grid-row-start: 1;
   grid-column-end: span 1;
-  padding: 50px;
+  padding: 10px;
   transition:
     opacity 1s,
     transform 1s;

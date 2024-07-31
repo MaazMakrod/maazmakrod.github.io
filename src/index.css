@@ -10,4 +10,7 @@ body {
   width: fit-content;
   margin: auto;
   position: relative;
+
+  display: flex;
+  flex-direction: column;
 }
