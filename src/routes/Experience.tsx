@@ -59,11 +59,8 @@ const MAIN_CONTENT_CARD_STYLING = {
         bottom: -15,
         left: -10,
       },
-      blobPulseOptions: {
-        color: `${COLORS.accent}ff`,
-        spread: "10rem",
-        animationOptions: { timing: 5000, options: "infinite" },
-      }
+      startingBlobShape: 3,
+      blobPulseOptions: BLOB_PULSE_ANIMATION,
     }) as CardWrapperProps
   }
 };
