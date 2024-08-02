@@ -38,6 +38,7 @@ export type CarouselCardProps = {
   playBtnProps?: PlayPauseBtnProps;
   paginationBullets?: boolean;
   paginationBulletOptions?: PaginationBulletOptions;
+  autoplaySpeed?: number;
 };
 
 type PaginationBulletProps = {
@@ -73,6 +74,7 @@ const CarouselCard: React.FC<CarouselCardProps> = ({
   playBtnProps,
   paginationBullets,
   paginationBulletOptions,
+  autoplaySpeed = 2000,
 }) => {
   const slideRefs = useRef<Array<HTMLDivElement | null>>([]);
   const timer = useRef<undefined | NodeJS.Timeout>(undefined);
@@ -99,7 +101,7 @@ const CarouselCard: React.FC<CarouselCardProps> = ({
     if (playing && timer.current === undefined) {
       timer.current = setInterval(() => {
         scrollNextCardIntoView();
-      }, 2000);
+      }, autoplaySpeed);
     } else if (!playing) {
       clearInterval(timer.current);
       timer.current = undefined;

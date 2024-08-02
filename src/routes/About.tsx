@@ -130,16 +130,11 @@ function About() {
                     ...generateCardWrapperProps('primary', '10px', {
                       blob: true,
                       blobAnimations: {
-                        growBlob: true,
-                        pulseBlob: true,
-                        animateBlobPosition: true,
+                        growBlob: false,
+                        pulseBlob: false,
+                        animateBlobPosition: false,
                       },
                       blobSize: 'large',
-                      blobPosition: {
-                        top: 0,
-                        left: 20,
-                      },
-                      blobMovementOptions: 1,
                     }) as CardWrapperProps,
                     borderRadius: {
                       [BREAKPOINTS.DEFAULT]: '0px'
@@ -148,7 +143,7 @@ function About() {
                   textProps={[
                     {
                       content: {
-                        text: `My current interests?`,
+                        text: `My current tech interests?`,
                         color: COLORS.white,
                         tagName: 'p',
                         types: ['h1', 'bold'],
@@ -160,19 +155,15 @@ function About() {
                 />,
                 <TextCard
                   cardWrapperProps={{
-                    ...generateCardWrapperProps('primary', '10px', {
+                    ...generateCardWrapperProps('secondary', '10px', {
                       blob: true,
                       blobAnimations: {
-                        growBlob: true,
-                        pulseBlob: true,
-                        animateBlobPosition: true,
+                        growBlob: false,
+                        pulseBlob: false,
+                        animateBlobPosition: false,
                       },
                       blobSize: 'large',
-                      blobPosition: {
-                        top: 0,
-                        left: 20,
-                      },
-                      blobMovementOptions: 1,
+                      startingBlobShape: 2,
                     }) as CardWrapperProps,
                     borderRadius: {
                       [BREAKPOINTS.DEFAULT]: '0px'
@@ -181,13 +172,47 @@ function About() {
                   textProps={[
                     {
                       content: {
-                        text: `My current interests?`,
-                        color: COLORS.white,
+                        text: `Network Protocol Simulators - `,
+                        color: COLORS.primary,
                         tagName: 'p',
-                        types: ['h1', 'bold'],
+                        types: ['pLarge', 'bold'],
                         fade: true,
                         margin: '1rem 0',
-                      }
+                        nestedText: [
+                          {
+                            content: {
+                              text: ` During my fourth year capstone course I will be working in a team under `,
+                              tagName: 'span',
+                              types: ['p', 'bold'],
+                              fade: true,
+                            }
+                          },
+                          {
+                            content: {
+                              text: `Professor JJ Garcia-Luna-Aceves`,
+                              tagName: 'a',
+                              color: COLORS.primary,
+                              types: ['p', 'bold'],
+                              fade: true,
+                              underline: true,
+                              underlineColor: `${COLORS.primary} 0 0`,
+                              underlineSize: {
+                                [BREAKPOINTS.DEFAULT]: '2px',
+                              },
+                              url: 'https://www.ece.utoronto.ca/people/garcia-luna-aceves-j-j/',
+                              target: '_blank',
+                            },
+                          },
+                          {
+                            content: {
+                              text: ` to develop the next generation of network protocol simulators`,
+                              tagName: 'span',
+                              types: ['p', 'bold'],
+                              fade: true,
+                            }
+                          },
+                        ]
+                      },
                     }
                   ]}
                 />,
@@ -196,16 +221,12 @@ function About() {
                     ...generateCardWrapperProps('primary', '10px', {
                       blob: true,
                       blobAnimations: {
-                        growBlob: true,
-                        pulseBlob: true,
-                        animateBlobPosition: true,
+                        growBlob: false,
+                        pulseBlob: false,
+                        animateBlobPosition: false,
                       },
                       blobSize: 'large',
-                      blobPosition: {
-                        top: 0,
-                        left: 20,
-                      },
-                      blobMovementOptions: 1,
+                      startingBlobShape: 1,
                     }) as CardWrapperProps,
                     borderRadius: {
                       [BREAKPOINTS.DEFAULT]: '0px'
@@ -214,31 +235,62 @@ function About() {
                   textProps={[
                     {
                       content: {
-                        text: `My current interests?`,
+                        text: `Infrastructure as Code (IaC) - `,
                         color: COLORS.white,
                         tagName: 'p',
-                        types: ['h1', 'bold'],
+                        types: ['pLarge', 'bold'],
                         fade: true,
                         margin: '1rem 0',
+                        nestedText: [
+                          {
+                            content: {
+                              text: `As part of my internship at `,
+                              tagName: 'span',
+                              types: ['p', 'bold'],
+                              fade: true,
+                              margin: '1rem 0',
+                            }
+                          },
+                          {
+                            content: {
+                              text: `Konrad Group,`,
+                              tagName: 'a',
+                              types: ['p', 'bold'],
+                              fade: true,
+                              margin: '1rem 0',
+                              underline: true,
+                              color: COLORS.white,
+                              underlineColor: `${COLORS.white} 0 0`,
+                              underlineSize: {
+                                [BREAKPOINTS.DEFAULT]: '2px',
+                              },
+                              url: '/experience',
+                            }
+                          },
+                          {
+                            content: {
+                              text: ` I worked on developing a client's infrastructure using Terraform, sparking my interest in IaC.`,
+                              tagName: 'a',
+                              types: ['p', 'bold'],
+                              fade: true,
+                            }
+                          }
+                        ]
                       }
                     }
                   ]}
                 />,
                 <TextCard
                   cardWrapperProps={{
-                    ...generateCardWrapperProps('primary', '10px', {
+                    ...generateCardWrapperProps('secondary', '10px', {
                       blob: true,
                       blobAnimations: {
-                        growBlob: true,
-                        pulseBlob: true,
-                        animateBlobPosition: true,
+                        growBlob: false,
+                        pulseBlob: false,
+                        animateBlobPosition: false,
                       },
                       blobSize: 'large',
-                      blobPosition: {
-                        top: 0,
-                        left: 20,
-                      },
-                      blobMovementOptions: 1,
+                      startingBlobShape: 3
                     }) as CardWrapperProps,
                     borderRadius: {
                       [BREAKPOINTS.DEFAULT]: '0px'
@@ -247,12 +299,23 @@ function About() {
                   textProps={[
                     {
                       content: {
-                        text: `My current interests?`,
-                        color: COLORS.white,
+                        text: `Data Structures and Algorithms - `,
+                        color: COLORS.primary,
                         tagName: 'p',
-                        types: ['h1', 'bold'],
+                        types: ['pLarge', 'bold'],
                         fade: true,
                         margin: '1rem 0',
+                        nestedText: [
+                          {
+                            content: {
+                              text: `Although my education at UofT built a strong fundamentals for this, I have found an enjoyment in tackling LeetCode problems to continually improve my understanding of them.`,
+                              tagName: 'span',
+                              types: ['p', 'bold'],
+                              fade: true,
+                              margin: '1rem 0',
+                            }
+                          },
+                        ]
                       }
                     }
                   ]}
@@ -261,7 +324,8 @@ function About() {
               borderRadius ={{
                 [BREAKPOINTS.DEFAULT]: "20px",
               }}
-              autoplay
+              autoplay={false}
+              autoplaySpeed={5000}
               playBtn
               playBtnProps= {{
                 position: {
