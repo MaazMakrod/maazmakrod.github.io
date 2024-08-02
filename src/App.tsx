@@ -3,6 +3,7 @@ import Home from './routes/Home';
 import NotFound from './routes/404';
 import Layout from './routes/Layout';
 import Experience from './routes/Experience';
+import About from './routes/About';
 
 function App() {
   const router = createBrowserRouter([
@@ -18,6 +19,10 @@ function App() {
         {
           element: <Experience />,
           path: 'experience'
+        },
+        {
+          element: <About />,
+          path: 'about'
         },
       ]
     }

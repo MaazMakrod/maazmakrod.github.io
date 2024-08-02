@@ -2,7 +2,7 @@ import React, { ReactNode } from "react";
 import styled from "styled-components";
 import buildStyles from "./styles";
 import { StylesValue } from "../../styles/helpers";
-import { COLORS } from "../../styles/theme";
+import { FONT } from "../../styles/theme";
 
 export type TypesOptions =
   | "thin"
@@ -120,7 +120,7 @@ const StyledText = styled.div<
     | "disabled"
   >
 >`
-  font-family: "Raleway", "sans-serif";
+  font-family: ${FONT};
   box-sizing: border-box;
 
   ${(props) =>

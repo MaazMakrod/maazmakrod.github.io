@@ -9,6 +9,8 @@ import { COLORS, CONTENT_HEIGHT, CONTENT_WIDTH } from '../styles/theme';
 import { Link } from '../icons';
 import { generateCardWrapperProps, ICON_DEFAULT_PROPS } from '../utils/propHelpers';
 import { CardWrapperProps } from '../components/card-wrapper/CardWrapper';
+import { IconProps } from '../components/icon/Icon';
+import { CardGridProps } from '../components/card-grid/CardGrid';
 
 function Home() {
   const homePageArgs = {
@@ -92,7 +94,7 @@ function Home() {
                   bottom: 5,
                   right: 10,
                 }
-              }              
+              } as IconProps
             }}
           />
       },
@@ -143,7 +145,7 @@ function Home() {
                   top: 5,
                   left: 5,
                 }
-              }
+              } as IconProps
             }}
           />
       },
@@ -175,7 +177,7 @@ function Home() {
                   left: 10,
                 },
                 ...ICON_DEFAULT_PROPS['primary']
-              },
+              } as IconProps,
               overlay:<TextCard 
                   useFlex
                   horizontalPosition='right'
@@ -223,7 +225,7 @@ function Home() {
                     }
                   }) as CardWrapperProps}
                 />,
-            }}
+            } as CardWrapperProps}
           />,
       },
       {
@@ -255,7 +257,7 @@ function Home() {
                   right: 10,
                 },
                 ...ICON_DEFAULT_PROPS['primary'],
-              },
+              } as IconProps,
               overlay:<TextCard 
                   useFlex
                   horizontalPosition='left'
@@ -303,7 +305,7 @@ function Home() {
                     }
                   }) as CardWrapperProps}
                 />,
-            }}
+            } as CardWrapperProps}
           />,
       },
       {
@@ -318,20 +320,31 @@ function Home() {
           height = {{ [BREAKPOINTS.DEFAULT]: "100%" }}
           slides = {[
             <TextCard
-              cardWrapperProps={generateCardWrapperProps('primary', '10px', {
-                blob: true,
-                blobAnimations: {
-                  growBlob: true,
-                  pulseBlob: true,
-                  animateBlobPosition: true,
-                },
-                blobSize: 'large',
-                blobPosition: {
-                  top: 0,
-                  left: 20,
-                },
-                blobMovementOptions: 1,
-              }, true) as CardWrapperProps}
+              cardWrapperProps={{
+                ...generateCardWrapperProps('primary', '10px', {
+                  blob: true,
+                  blobAnimations: {
+                    growBlob: true,
+                    pulseBlob: true,
+                    animateBlobPosition: true,
+                  },
+                  blobSize: 'large',
+                  blobPosition: {
+                    top: 0,
+                    left: 20,
+                  },
+                  blobMovementOptions: 1,
+                }, true) as CardWrapperProps,
+                icon: {
+                  ...ICON_DEFAULT_PROPS['primary'],
+                  SvgImage: Link,
+                  url: '/projects',
+                  position: {
+                    top: 6,
+                    left: 5,
+                  }
+                } as IconProps
+              }}
               textProps={[
                 {
                   content: {
@@ -385,7 +398,7 @@ function Home() {
     ],
   };
 
-  return <CardGrid {...homePageArgs} />
+  return <CardGrid {...homePageArgs as CardGridProps} />
 }
 
 export default Home;

@@ -6,6 +6,7 @@ import { TabCard } from '../components/tab-card';
 import { generateCardWrapperProps, ICON_DEFAULT_PROPS } from '../utils/propHelpers';
 import { CardWrapperProps } from '../components/card-wrapper/CardWrapper';
 import { IconProps } from '../components/icon/Icon';
+import { TabCardProps } from '../components/tab-card/TabCard';
 
 const SHARED_ICON_LINK_PROPS = {
   SvgImage: Link,
@@ -277,7 +278,7 @@ function Experience() {
     ],
   };
 
-  return <TabCard {...tabCardArgs} />
+  return <TabCard {...tabCardArgs as TabCardProps} />
 }
 
 export default Experience;

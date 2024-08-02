@@ -96,12 +96,13 @@ const CarouselCard: React.FC<CarouselCardProps> = ({
   }, [currentSlideIndex, slides.length]);
 
   useMemo(() => {
-    if (playing) {
+    if (playing && timer.current === undefined) {
       timer.current = setInterval(() => {
         scrollNextCardIntoView();
       }, 2000);
-    } else {
+    } else if (!playing) {
       clearInterval(timer.current);
+      timer.current = undefined;
     }
   }, [timer, scrollNextCardIntoView, playing]);
 
