@@ -112,7 +112,7 @@ const buildAnimationString = (
 
   if (animateBlobPosition) {
     animations.push(
-      `${customBlobAnimationName ?? 'blobMovement'}  ${blobOptions?.timing ?? "10000"}ms ${blobOptions?.options}`,
+      `${customBlobAnimationName ?? "blobMovement"}  ${blobOptions?.timing ?? "10000"}ms ${blobOptions?.options}`,
     );
   }
 
@@ -203,7 +203,8 @@ const styleBlob = (options?: BlobOptions) => {
 
   if (animateBlobPosition) {
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    const { animationOptions, customAnimationName, ...customMovement } = blobMovementOptions ?? {};
+    const { animationOptions, customAnimationName, ...customMovement } =
+      blobMovementOptions ?? {};
 
     if (Object.keys(customMovement).length > 0 && customAnimationName) {
       rules.push(buildCustomAnimation(customAnimationName, customMovement));

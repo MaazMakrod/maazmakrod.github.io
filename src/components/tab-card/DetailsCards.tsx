@@ -31,9 +31,28 @@ const DetailsCard: React.FC<DetailsProps> = ({
         underlineSize={{ [BREAKPOINTS.DEFAULT]: "3px" }}
         color={textColor}
       />
-      <Text text={position} color={textColor} tagName="h2" types={["h6"]} uppercase fade />
-      <Text text={positionLength} color={textColor} tagName="p" types={["p"]} fade />
-      <Text text={description} color={textColor} tagName="p" types={["pLarge"]} fade />
+      <Text
+        text={position}
+        color={textColor}
+        tagName="h2"
+        types={["h6"]}
+        uppercase
+        fade
+      />
+      <Text
+        text={positionLength}
+        color={textColor}
+        tagName="p"
+        types={["p"]}
+        fade
+      />
+      <Text
+        text={description}
+        color={textColor}
+        tagName="p"
+        types={["pLarge"]}
+        fade
+      />
     </div>
   );
 };

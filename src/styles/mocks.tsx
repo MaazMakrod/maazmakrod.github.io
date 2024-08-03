@@ -104,8 +104,8 @@ export const MOCK_IMAGE_CARD_PROPS = (): ImageCardProps => ({
   src: "https://cdn.mos.cms.futurecdn.net/xaycNDmeyxpHDrPqU6LmaD.jpg",
   alt: "Mountains Image",
   objectFit: "cover",
-  imageWidth: { [BREAKPOINTS.DEFAULT]: '100%' },
-  imageHeight: { [BREAKPOINTS.DEFAULT]: '100%' },
+  imageWidth: { [BREAKPOINTS.DEFAULT]: "100%" },
+  imageHeight: { [BREAKPOINTS.DEFAULT]: "100%" },
 });
 
 export const MOCK_CAROUSEL_PROPS = (inheritDimensions?: boolean) => {

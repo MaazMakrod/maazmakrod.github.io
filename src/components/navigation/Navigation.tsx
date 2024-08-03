@@ -3,23 +3,21 @@ import styled from "styled-components";
 import { Text } from "../text";
 import { COLORS, NAVIGATION_HEIGHT } from "../../styles/theme";
 import { PathMatch } from "react-router-dom";
+import { BREAKPOINTS, mapCssToBreakpoints } from "../../styles/helpers";
 type NavLink = {
   text: string;
   url: string;
   disableHover?: boolean;
-}
+};
 
 export type NavigationProps = {
   links: NavLink[];
   activeLink: {
     [key: string]: PathMatch<string> | null;
-  }
+  };
 };
 
-const Navigation: React.FC<NavigationProps> = ({
-  links,
-  activeLink,
-}) => {
+const Navigation: React.FC<NavigationProps> = ({ links, activeLink }) => {
   const [opened, setOpened] = useState(false);
 
   return (
@@ -33,7 +31,7 @@ const Navigation: React.FC<NavigationProps> = ({
       <StyledMenuItem as="div" active={Boolean(activeLink[links?.[0]?.text])}>
         <Text
           text="Maaz Makrod"
-          types={['h1', 'bold']}
+          types={["h1", "bold"]}
           tagName="a"
           url="/"
           margin="0"
@@ -43,26 +41,24 @@ const Navigation: React.FC<NavigationProps> = ({
       </StyledMenuItem>
 
       <StyledMenuItems opened={opened}>
-        {
-          links.map((link, index) => {
-            return (
-              <StyledMenuItem
-                key={`nav-link-${index}`}
-                disableHover={link.disableHover}
-                active={Boolean(activeLink[link.text])}
-              >
-                <Text 
-                  text={link.text}
-                  types={['h2', 'bold']}
-                  tagName="a"
-                  url={link.url}
-                  color="inherit"
-                  disabled={Boolean(activeLink[link.text])}
-                />
-              </StyledMenuItem>
-            )
-          })
-        }
+        {links.map((link, index) => {
+          return (
+            <StyledMenuItem
+              key={`nav-link-${index}`}
+              disableHover={link.disableHover}
+              active={Boolean(activeLink[link.text])}
+            >
+              <Text
+                text={link.text}
+                types={["h2", "bold"]}
+                tagName="a"
+                url={link.url}
+                color="inherit"
+                disabled={Boolean(activeLink[link.text])}
+              />
+            </StyledMenuItem>
+          );
+        })}
       </StyledMenuItems>
     </StyledNavigation>
   );
@@ -72,10 +68,13 @@ const StyledMenuItem = styled.li<{
   disableHover?: boolean;
   active?: boolean;
 }>`
-  color: ${props => props.active ? COLORS.accent : COLORS.primary};
+  color: ${(props) => (props.active ? COLORS.accent : COLORS.primary)};
   transition: all 200ms ease;
 
-  ${props => props.disableHover ? '' : `
+  ${(props) =>
+    props.disableHover
+      ? ""
+      : `
     &:hover {
       color: ${COLORS.accent};
     }  
@@ -89,7 +88,8 @@ const StyledMenuItems = styled.ul<{
   background-color: ${COLORS.background};
   width: 100%;
   height: 100vh;
-  transform: ${props => props.opened ? 'translateX(0)' : 'translate(-150%)'};
+  transform: ${(props) =>
+    props.opened ? "translateX(0)" : "translate(-150%)"};
   display: flex;
   flex-direction: column;
   transition: all 0.5s ease-in-out;
@@ -113,10 +113,10 @@ const StyledHamburgerLine = styled.span`
 const StyledHamburger = styled.button<{
   opened: boolean;
 }>`
-	background: none;
-	color: inherit;
-	border: none;
-	padding: 0;
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
   cursor: pointer;
 
   display: block;
@@ -130,28 +130,34 @@ const StyledHamburger = styled.button<{
   :nth-child(1) {
     transform-origin: 0% 0%;
     background: ${COLORS.primary};
-    transform: ${props => props.opened ? 'rotate(45deg)' : 'rotate(0deg)'};
-    transition: transform 0.4s ease-in-out, background 0.2s ease-in-out;
+    transform: ${(props) => (props.opened ? "rotate(45deg)" : "rotate(0deg)")};
+    transition:
+      transform 0.4s ease-in-out,
+      background 0.2s ease-in-out;
   }
 
   :nth-child(2) {
-    transform: ${props => props.opened ? 'scaleY(0)' : 'scaleY(1)'};
+    transform: ${(props) => (props.opened ? "scaleY(0)" : "scaleY(1)")};
     background: ${COLORS.primary};
-    transition: transform 0.2s ease-in-out, background 0.4s ease-in-out;
+    transition:
+      transform 0.2s ease-in-out,
+      background 0.4s ease-in-out;
   }
 
   :nth-child(3) {
     transform-origin: 0% 100%;
     background: ${COLORS.primary};
-    transform: ${props => props.opened ? 'rotate(-45deg)' : 'rotate(0deg)'};
-    transition: transform 0.4s ease-in-out, background 0.6s ease-in-out;
+    transform: ${(props) => (props.opened ? "rotate(-45deg)" : "rotate(0deg)")};
+    transition:
+      transform 0.4s ease-in-out,
+      background 0.6s ease-in-out;
   }
 
   &:hover {
     :nth-child(1) {
       background: ${COLORS.accent};
     }
-    
+
     :nth-child(2) {
       background: ${COLORS.accent};
     }
@@ -172,7 +178,16 @@ const StyledNavigation = styled.nav`
   align-items: center;
   height: ${NAVIGATION_HEIGHT};
   z-index: 10;
-  position: relative;
+  position: sticky;
+  top: 0;
+  background-color: ${COLORS.background}cf;
+
+  ${mapCssToBreakpoints({
+    [BREAKPOINTS.MEDIUM]: {
+      position: "relative",
+      top: "auto",
+    },
+  })}
 `;
 
 export default Navigation;

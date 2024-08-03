@@ -7,51 +7,53 @@ import { Text } from "../text";
 type FooterLink = {
   svg: React.FC;
   url: string;
-}
+};
 
 export type FooterProps = {
   links: FooterLink[];
 };
 
-const Footer: React.FC<FooterProps> = ({
-  links
-}) => {
+const Footer: React.FC<FooterProps> = ({ links }) => {
   return (
-  <StyeldFooter>
-      <Text text={`© Maaz Makrod, ${new Date().getFullYear()}`} tagName="p" types={['p', 'bold']} color={COLORS.primary} margin="0" />
+    <StyeldFooter>
+      <Text
+        text={`© Maaz Makrod, ${new Date().getFullYear()}`}
+        tagName="p"
+        types={["p", "bold"]}
+        color={COLORS.primary}
+        margin="0"
+      />
       <StyledFooterLinks>
-        {
-          links.map(link => (
-            <Icon 
-              SvgImage={link.svg}
-              tag="a"
-              url={link.url}
-              width={{
-                [BREAKPOINTS.DEFAULT]: '24px'
-              }}
-              height={{
-                [BREAKPOINTS.DEFAULT]: '24px'
-              }}
-              color={COLORS.primary}
-              hoverOptions={{
-                color: COLORS.accent,
-                timing: 500,
-                filter: `drop-shadow(2px 5px 10px ${COLORS.accent})`,
-              }}
-              target="_blank"
-              svgProps={{
-                style: {
-                  width: 'inherit',
-                  height: 'inherit',
-                }
-              }}
-            />        
-          ))
-        }
+        {links.map((link) => (
+          <Icon
+            SvgImage={link.svg}
+            tag="a"
+            url={link.url}
+            width={{
+              [BREAKPOINTS.DEFAULT]: "24px",
+            }}
+            height={{
+              [BREAKPOINTS.DEFAULT]: "24px",
+            }}
+            color={COLORS.primary}
+            hoverOptions={{
+              color: COLORS.accent,
+              timing: 500,
+              filter: `drop-shadow(2px 5px 10px ${COLORS.accent})`,
+            }}
+            target="_blank"
+            svgProps={{
+              style: {
+                width: "inherit",
+                height: "inherit",
+              },
+            }}
+          />
+        ))}
       </StyledFooterLinks>
-  </StyeldFooter>
+    </StyeldFooter>
   );
-}
+};
 
 const StyledFooterLinks = styled.div`
   display: flex;

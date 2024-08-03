@@ -38,7 +38,7 @@ const ImageCard: React.FC<ImageCardProps> = ({
         objectFit={objectFit}
         imageWidth={imageWidth}
         imageHeight={imageHeight}
-        {...(lazyLoad && {loading: "lazy"})}
+        {...(lazyLoad && { loading: "lazy" })}
       />
     </CardWrapper>
   );

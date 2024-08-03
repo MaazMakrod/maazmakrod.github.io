@@ -116,7 +116,7 @@ const buildStyles = (
     animation: buildAnimationString(!!underline, !!fade),
     "animation-fill-mode": "forwards",
     transition: "all 0.3s",
-    ...(disabled && {'pointer-events': 'none'}),
+    ...(disabled && { "pointer-events": "none" }),
   };
 
   rules.push(...mapCssToBreakpoints(styles));

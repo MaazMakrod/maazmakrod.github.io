@@ -67,8 +67,8 @@ const StyledTextContainer = styled.div<{
       display: flex;
       justify-content: ${props.horizontal};
       align-items: ${props.vertical};
-      text-align:  ${props.horizontal === 'flex-end' ? 'right' : 'left'};
-      ${props.flexDir ? `flex-direction: ${props.flexDir};`: ''}
+      text-align:  ${props.horizontal === "flex-end" ? "right" : "left"};
+      ${props.flexDir ? `flex-direction: ${props.flexDir};` : ""}
     `
       : ""}
 `;

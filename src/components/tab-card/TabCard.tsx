@@ -12,7 +12,7 @@ type TabButtonStyle = {
   buttonColor: string;
   buttonHoverColor: string;
   buttonBoxShadow: string;
-  textColor: string,
+  textColor: string;
 };
 
 type DetailsCard = DetailsProps &
@@ -112,7 +112,12 @@ const TabCard: React.FC<TabCardProps> = ({ tabs, tabButtonStyle }) => {
             {...tabButtonStyle}
             onClick={() => handleTabChange(index)}
           >
-            <Text color={tabButtonStyle.textColor} text={t.buttonText} tagName="span" types={["p", "bold"]} />
+            <Text
+              color={tabButtonStyle.textColor}
+              text={t.buttonText}
+              tagName="span"
+              types={["p", "bold"]}
+            />
           </StyledTabItem>
         ))}
       </StyledTabItems>

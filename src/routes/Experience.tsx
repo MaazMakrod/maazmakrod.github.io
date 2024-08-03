@@ -1,12 +1,15 @@
-import { BREAKPOINTS } from '../styles/helpers';
-import { ImageCard, TextCard } from '../components';
-import { COLORS } from '../styles/theme';
-import { Link } from '../icons';
-import { TabCard } from '../components/tab-card';
-import { generateCardWrapperProps, ICON_DEFAULT_PROPS } from '../utils/propHelpers';
-import { CardWrapperProps } from '../components/card-wrapper/CardWrapper';
-import { IconProps } from '../components/icon/Icon';
-import { TabCardProps } from '../components/tab-card/TabCard';
+import { BREAKPOINTS } from "../styles/helpers";
+import { ImageCard, TextCard } from "../components";
+import { COLORS } from "../styles/theme";
+import { Link } from "../icons";
+import { TabCard } from "../components/tab-card";
+import {
+  generateCardWrapperProps,
+  ICON_DEFAULT_PROPS,
+} from "../utils/propHelpers";
+import { CardWrapperProps } from "../components/card-wrapper/CardWrapper";
+import { IconProps } from "../components/icon/Icon";
+import { TabCardProps } from "../components/tab-card/TabCard";
 
 const SHARED_ICON_LINK_PROPS = {
   SvgImage: Link,
@@ -30,44 +33,44 @@ const BLOB_PULSE_ANIMATION = {
 };
 
 const MAIN_CONTENT_CARD_STYLING = {
-  'primary': {
-      ...generateCardWrapperProps('secondary', '20px', {
-        blob: true,
-        blobAnimations: {
-          pulseBlob: true,
-          growBlob: false,
-          animateBlobPosition: false,
-        },
-        blobSize: 'large',
-        blobPosition: {
-          bottom: -15,
-          left: -10,
-        },
-        startingBlobShape: 3,
-        blobPulseOptions: BLOB_PULSE_ANIMATION,
-      }) as CardWrapperProps,
-  },
-  'secondary': {
-    ...generateCardWrapperProps("primary", "20px", {
+  primary: {
+    ...(generateCardWrapperProps("secondary", "20px", {
       blob: true,
       blobAnimations: {
         pulseBlob: true,
         growBlob: false,
-        animateBlobPosition: false
+        animateBlobPosition: false,
       },
-      blobSize: 'large',
+      blobSize: "large",
       blobPosition: {
         bottom: -15,
         left: -10,
       },
       startingBlobShape: 3,
       blobPulseOptions: BLOB_PULSE_ANIMATION,
-    }) as CardWrapperProps
-  }
+    }) as CardWrapperProps),
+  },
+  secondary: {
+    ...(generateCardWrapperProps("primary", "20px", {
+      blob: true,
+      blobAnimations: {
+        pulseBlob: true,
+        growBlob: false,
+        animateBlobPosition: false,
+      },
+      blobSize: "large",
+      blobPosition: {
+        bottom: -15,
+        left: -10,
+      },
+      startingBlobShape: 3,
+      blobPulseOptions: BLOB_PULSE_ANIMATION,
+    }) as CardWrapperProps),
+  },
 };
 
 const DETAILS_CARD_STYLING = {
-  'primary': {
+  primary: {
     underlineColor: `${COLORS.white} 0 0`,
     textColor: COLORS.white,
     technologyProps: {
@@ -82,9 +85,9 @@ const DETAILS_CARD_STYLING = {
         blobAnimations: {
           pulseBlob: true,
           growBlob: false,
-          animateBlobPosition: false
+          animateBlobPosition: false,
         },
-        blobSize: 'medium',
+        blobSize: "medium",
         blobPosition: {
           top: -10,
           right: -10,
@@ -93,7 +96,7 @@ const DETAILS_CARD_STYLING = {
       }),
     },
   },
-  'secondary': {
+  secondary: {
     underlineColor: `${COLORS.primary} 0 0`,
     textColor: COLORS.primary,
     technologyProps: {
@@ -108,9 +111,9 @@ const DETAILS_CARD_STYLING = {
         blobAnimations: {
           pulseBlob: true,
           growBlob: false,
-          animateBlobPosition: false
+          animateBlobPosition: false,
         },
-        blobSize: 'medium',
+        blobSize: "medium",
         blobPosition: {
           top: -10,
           right: -10,
@@ -119,7 +122,7 @@ const DETAILS_CARD_STYLING = {
       }),
     },
   },
-}
+};
 
 function Experience() {
   const tabCardArgs = {
@@ -134,18 +137,25 @@ function Experience() {
       {
         logo: (
           <ImageCard
-            cardWrapperProps={{
-              ...generateCardWrapperProps('primary', '10px', {
-                blob: false,
-              }, true),
-              centerContent: true,
-              backgroundColor: COLORS.black,
-              icon: {
-                url: "https://www.konrad.com/",
-                ...SHARED_ICON_LINK_PROPS,
-                ...ICON_DEFAULT_PROPS['primary'],
-              } as IconProps,
-            } as CardWrapperProps}
+            cardWrapperProps={
+              {
+                ...generateCardWrapperProps(
+                  "primary",
+                  "10px",
+                  {
+                    blob: false,
+                  },
+                  true,
+                ),
+                centerContent: true,
+                backgroundColor: COLORS.black,
+                icon: {
+                  url: "https://www.konrad.com/",
+                  ...SHARED_ICON_LINK_PROPS,
+                  ...ICON_DEFAULT_PROPS["primary"],
+                } as IconProps,
+              } as CardWrapperProps
+            }
             {...SHARED_LOGO_PROPS}
             src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsMWeZbrriYlVchumRY7j0US0db1vTfJfYIg&s"
             alt="Mountains Image"
@@ -153,7 +163,7 @@ function Experience() {
         ),
         mainContent: (
           <TextCard
-            cardWrapperProps={{...MAIN_CONTENT_CARD_STYLING['primary']}}
+            cardWrapperProps={{ ...MAIN_CONTENT_CARD_STYLING["primary"] }}
             useFlex={false}
             textProps={[
               {
@@ -197,27 +207,34 @@ function Experience() {
           companyName: "Konrad Group",
           position: "Associate Software Developer Intern",
           description: "I developed AI models and large scale websites 🤖",
-          positionLength: '16 Months',
+          positionLength: "16 Months",
           technologies: ["React", "AEM", "TypeScript"],
-          ...DETAILS_CARD_STYLING['primary'],
+          ...DETAILS_CARD_STYLING["primary"],
         },
         buttonText: "Konrad Group",
       },
       {
         logo: (
           <ImageCard
-            cardWrapperProps={{
-              ...generateCardWrapperProps('primary', '10px', {
-                blob: false,
-              }, true),
-              centerContent: true,
-              backgroundColor: COLORS.white,
-              icon: {
-                url: "https://www.konrad.com/",
-                ...SHARED_ICON_LINK_PROPS,
-                ...ICON_DEFAULT_PROPS['primary'],
-              } as IconProps,
-            } as CardWrapperProps}
+            cardWrapperProps={
+              {
+                ...generateCardWrapperProps(
+                  "primary",
+                  "10px",
+                  {
+                    blob: false,
+                  },
+                  true,
+                ),
+                centerContent: true,
+                backgroundColor: COLORS.white,
+                icon: {
+                  url: "https://www.konrad.com/",
+                  ...SHARED_ICON_LINK_PROPS,
+                  ...ICON_DEFAULT_PROPS["primary"],
+                } as IconProps,
+              } as CardWrapperProps
+            }
             {...SHARED_LOGO_PROPS}
             src="https://mms.businesswire.com/media/20240108824720/en/1990341/5/Rocscience_DETAIL.jpg"
             alt="Mountains Image"
@@ -225,7 +242,7 @@ function Experience() {
         ),
         mainContent: (
           <TextCard
-            cardWrapperProps={{...MAIN_CONTENT_CARD_STYLING['secondary']}}
+            cardWrapperProps={{ ...MAIN_CONTENT_CARD_STYLING["secondary"] }}
             useFlex={false}
             textProps={[
               {
@@ -270,15 +287,15 @@ function Experience() {
           position: "Associate Software Developer Intern",
           description: "I developed AI models and large scale websites 🤖",
           technologies: ["React", "AEM", "TypeScript"],
-          positionLength: '16 Months',
-          ...DETAILS_CARD_STYLING['secondary'],
+          positionLength: "16 Months",
+          ...DETAILS_CARD_STYLING["secondary"],
         },
         buttonText: "Konrad Group",
       },
     ],
   };
 
-  return <TabCard {...tabCardArgs as TabCardProps} />
+  return <TabCard {...(tabCardArgs as TabCardProps)} />;
 }
 
 export default Experience;

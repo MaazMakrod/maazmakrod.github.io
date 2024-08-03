@@ -49,7 +49,7 @@ const buildStyles = (
       display: "none",
     },
     "scrollbar-width": "none",
-    "overflow-y": 'hidden',
+    "overflow-y": "hidden",
   };
 
   return mapCssToBreakpoints(styles);
