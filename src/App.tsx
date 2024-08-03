@@ -4,6 +4,7 @@ import NotFound from "./routes/404";
 import Layout from "./routes/Layout";
 import Experience from "./routes/Experience";
 import About from "./routes/About";
+import Projects from "./routes/Projects";
 
 function App() {
   const router = createBrowserRouter([
@@ -23,6 +24,10 @@ function App() {
         {
           element: <About />,
           path: "about",
+        },
+        {
+          element: <Projects />,
+          path: "projects",
         },
       ],
     },
