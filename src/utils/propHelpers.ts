@@ -263,3 +263,37 @@ export const ICON_DEFAULT_PROPS = {
     zIndex: 10,
   },
 };
+
+export const CAROUSEL_DEFAULT_PROPS = {
+  borderRadius: {
+    [BREAKPOINTS.DEFAULT]: "20px",
+  },
+  playBtn: true,
+  playBtnProps: {
+    position: {
+      top: 5,
+      right: 5,
+    },
+    width: { [BREAKPOINTS.DEFAULT]: "50px" },
+    height: { [BREAKPOINTS.DEFAULT]: "50px" },
+    color: COLORS.quaternary,
+    hoverOptions: {
+      color: COLORS.accent,
+      timing: 1000,
+      easingFunction: "ease-in-out",
+      filter: `drop-shadow(2px 5px 10px ${COLORS.accent})`,
+    },
+  },
+  paginationBullets: true,
+  paginationBulletOptions: {
+    backgroundColor: `${COLORS.quaternary}61`,
+    size: 10,
+    color: COLORS.quinary,
+    hoverOptions: {
+      color: COLORS.accent,
+      timing: 500,
+    },
+  },
+  width: { [BREAKPOINTS.DEFAULT]: "100%" },
+  height: { [BREAKPOINTS.DEFAULT]: "100%" },
+};

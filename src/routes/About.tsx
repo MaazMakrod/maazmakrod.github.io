@@ -18,6 +18,7 @@ import {
 } from "../styles/theme";
 import { Link } from "../icons";
 import {
+  CAROUSEL_DEFAULT_PROPS,
   generateCardWrapperProps,
   ICON_DEFAULT_PROPS,
 } from "../utils/propHelpers";
@@ -151,8 +152,6 @@ function About() {
         },
         component: (
           <CarouselCard
-            width={{ [BREAKPOINTS.DEFAULT]: "100%" }}
-            height={{ [BREAKPOINTS.DEFAULT]: "100%" }}
             slides={[
               <TextCard
                 cardWrapperProps={{
@@ -350,37 +349,9 @@ function About() {
                 ]}
               />,
             ]}
-            borderRadius={{
-              [BREAKPOINTS.DEFAULT]: "20px",
-            }}
-            autoplay={false}
+            autoplay
             autoplaySpeed={5000}
-            playBtn
-            playBtnProps={{
-              position: {
-                top: 5,
-                right: 5,
-              },
-              width: { [BREAKPOINTS.DEFAULT]: "50px" },
-              height: { [BREAKPOINTS.DEFAULT]: "50px" },
-              color: COLORS.quaternary,
-              hoverOptions: {
-                color: COLORS.accent,
-                timing: 1000,
-                easingFunction: "ease-in-out",
-                filter: `drop-shadow(2px 5px 10px ${COLORS.accent})`,
-              },
-            }}
-            paginationBullets
-            paginationBulletOptions={{
-              backgroundColor: `${COLORS.quaternary}61`,
-              size: 10,
-              color: COLORS.quinary,
-              hoverOptions: {
-                color: COLORS.accent,
-                timing: 500,
-              },
-            }}
+            {...CAROUSEL_DEFAULT_PROPS}
           />
         ),
       },
