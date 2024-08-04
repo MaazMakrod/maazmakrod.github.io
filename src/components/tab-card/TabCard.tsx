@@ -6,6 +6,7 @@ import CardGrid from "../card-grid/CardGrid";
 import CardWrapper, { CardWrapperProps } from "../card-wrapper/CardWrapper";
 import DetailsCard, { DetailsProps } from "./DetailsCards";
 import TechnologiesList, { TechnologyListProps } from "./TechnologiesList";
+import { flushSync } from "react-dom";
 
 type TabButtonStyle = {
   containerColor: string;
@@ -104,9 +105,15 @@ const TabCard: React.FC<TabCardProps> = ({ tabs, tabButtonStyle }) => {
   const [opacity, setOpacity] = useState<number>(0);
 
   const handleTabChange = (i: number) => {
-    setOpacity(i);
-    setTimeout(() => setDispay(i), 300);
-    setTimeout(() => setActive(i), 310);
+    flushSync(() => {
+      setOpacity(i);
+    });
+    flushSync(() => {
+      setTimeout(() => setDispay(i), 300);
+    });
+    flushSync(() => {
+      setTimeout(() => setActive(i), 350);
+    });
   };
 
   return (
