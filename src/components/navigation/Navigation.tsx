@@ -102,7 +102,6 @@ const StyledMenuItems = styled.ul<{
   height: 100vh;
   transform: ${(props) =>
     props.opened ? "translateX(0)" : "translate(-150%)"};
-  display: flex;
   flex-direction: column;
   transition: all 0.5s ease-in-out;
   text-align: center;
@@ -112,7 +111,7 @@ const StyledMenuItems = styled.ul<{
   gap: 1rem;
   position: absolute;
   top: 0;
-  display: ${(props) => (props.display ? "auto" : "none")};
+  display: ${(props) => (props.display ? "flex" : "none")};
 `;
 
 const StyledHamburgerLine = styled.span`

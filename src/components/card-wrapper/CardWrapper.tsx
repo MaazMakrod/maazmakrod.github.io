@@ -12,6 +12,7 @@ export type CardWrapperProps = PropsWithChildren<{
   width?: StylesValue;
   height?: StylesValue;
   padding?: StylesValue;
+  display?: StylesValue;
   backgroundColor?: string;
   borderRadius?: StylesValue;
   overlayBackgroundColor?: string;
@@ -26,6 +27,7 @@ const CardWrapper: React.FC<CardWrapperProps> = ({
   height,
   backgroundColor,
   borderRadius,
+  display,
   overlay,
   cardWrapperStyles,
   overlayBackgroundColor,
@@ -38,6 +40,7 @@ const CardWrapper: React.FC<CardWrapperProps> = ({
   const cardProps = {
     width: width,
     height: height,
+    display: display,
     backgroundColor: backgroundColor,
     borderRadius: borderRadius,
     cardWrapperStyles: cardWrapperStyles,
@@ -154,6 +157,7 @@ const StyledCardWrapper = styled.div<
     | "height"
     | "cardWrapperStyles"
     | "borderRadius"
+    | "display"
   >
 >`
   display: inline-block;
@@ -173,6 +177,7 @@ const StyledCardWrapper = styled.div<
           props.width,
           props.height,
           props.borderRadius,
+          props.display,
         )
       : ""}
 `;

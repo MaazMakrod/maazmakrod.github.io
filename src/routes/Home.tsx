@@ -28,7 +28,8 @@ function Home() {
       [BREAKPOINTS.DEFAULT]: "3",
     },
     numberCols: {
-      [BREAKPOINTS.DEFAULT]: "5",
+      [BREAKPOINTS.DEFAULT]: "2",
+      [BREAKPOINTS.MEDIUM]: "5",
     },
     gap: {
       [BREAKPOINTS.DEFAULT]: "1rem",
@@ -121,7 +122,8 @@ function Home() {
           [BREAKPOINTS.DEFAULT]: [2, 1],
         },
         endCoordinate: {
-          [BREAKPOINTS.DEFAULT]: [3, 2],
+          [BREAKPOINTS.DEFAULT]: [2, 2],
+          [BREAKPOINTS.MEDIUM]: [3, 2],
         },
         component: (
           <TextCard
@@ -269,6 +271,10 @@ function Home() {
         startCoordinate: {
           [BREAKPOINTS.DEFAULT]: [3, 3],
         },
+        display: {
+          [BREAKPOINTS.DEFAULT]: "none",
+          [BREAKPOINTS.MEDIUM]: "unset",
+        },
         component: (
           <ImageCard
             src={mail}
@@ -364,6 +370,10 @@ function Home() {
         },
         endCoordinate: {
           [BREAKPOINTS.DEFAULT]: [5, 3],
+        },
+        display: {
+          [BREAKPOINTS.DEFAULT]: "none",
+          [BREAKPOINTS.MEDIUM]: "unset",
         },
         component: (
           <CarouselCard

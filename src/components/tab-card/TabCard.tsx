@@ -1,4 +1,9 @@
-import { BREAKPOINTS } from "../../styles/helpers";
+import {
+  BREAKPOINTS,
+  mapCssToBreakpoints,
+  mapStylesValuesToBreakpoints,
+  StylesValue,
+} from "../../styles/helpers";
 import React, { ReactNode, useState } from "react";
 import styled from "styled-components";
 import Text from "../text/Text";
@@ -29,6 +34,7 @@ export type TabCardProps = {
     buttonText: string;
   }>;
   tabButtonStyle: TabButtonStyle;
+  width: StylesValue;
 };
 
 const composeTabArgs = (
@@ -44,10 +50,12 @@ const composeTabArgs = (
       [BREAKPOINTS.DEFAULT]: "auto",
     },
     numberRows: {
-      [BREAKPOINTS.DEFAULT]: "7",
+      [BREAKPOINTS.DEFAULT]: "auto",
+      [BREAKPOINTS.MEDIUM]: "7",
     },
     numberCols: {
-      [BREAKPOINTS.DEFAULT]: "7",
+      [BREAKPOINTS.DEFAULT]: "1",
+      [BREAKPOINTS.MEDIUM]: "7",
     },
     gap: {
       [BREAKPOINTS.DEFAULT]: "1rem",
@@ -60,14 +68,19 @@ const composeTabArgs = (
         endCoordinate: {
           [BREAKPOINTS.DEFAULT]: [2, 2],
         },
+        display: {
+          [BREAKPOINTS.DEFAULT]: 'none',
+          [BREAKPOINTS.MEDIUM]: 'unset',
+        },
         component: logo,
       },
       {
         startCoordinate: {
-          [BREAKPOINTS.DEFAULT]: [1, 3],
+          [BREAKPOINTS.DEFAULT]: [1, 1],
+          [BREAKPOINTS.MEDIUM]: [1, 3],
         },
         endCoordinate: {
-          [BREAKPOINTS.DEFAULT]: [2, 7],
+          [BREAKPOINTS.MEDIUM]: [2, 7],
         },
         component: (
           <CardWrapper {...details.cardWrapperProps}>
@@ -88,10 +101,11 @@ const composeTabArgs = (
       },
       {
         startCoordinate: {
-          [BREAKPOINTS.DEFAULT]: [3, 1],
+          [BREAKPOINTS.DEFAULT]: [1, 2],
+          [BREAKPOINTS.MEDIUM]: [3, 1],
         },
         endCoordinate: {
-          [BREAKPOINTS.DEFAULT]: [7, 7],
+          [BREAKPOINTS.MEDIUM]: [7, 7],
         },
         component: mainContent,
       },
@@ -99,7 +113,7 @@ const composeTabArgs = (
   };
 };
 
-const TabCard: React.FC<TabCardProps> = ({ tabs, tabButtonStyle }) => {
+const TabCard: React.FC<TabCardProps> = ({ tabs, tabButtonStyle, width }) => {
   const [active, setActive] = useState<number>(0);
   const [display, setDispay] = useState<number>(0);
   const [opacity, setOpacity] = useState<number>(0);
@@ -117,7 +131,7 @@ const TabCard: React.FC<TabCardProps> = ({ tabs, tabButtonStyle }) => {
   };
 
   return (
-    <StyledTabContainer>
+    <StyledTabContainer width={width}>
       <StyledTabItems {...tabButtonStyle}>
         {tabs.map((t, index) => (
           <StyledTabItem
@@ -152,22 +166,27 @@ const TabCard: React.FC<TabCardProps> = ({ tabs, tabButtonStyle }) => {
   );
 };
 
-const StyledTabContainer = styled.div`
+const StyledTabContainer = styled.div<Pick<TabCardProps, "width">>`
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  width: 80vw;
-  max-width: 80vw;
   background-color: transparent;
   gap: 1rem;
+
+  ${(props) =>
+    mapCssToBreakpoints(
+      mapStylesValuesToBreakpoints({
+        width: props.width,
+      }),
+    )}
 `;
 
 const StyledTabItems = styled.div<Pick<TabButtonStyle, "containerColor">>`
   box-sizing: border-box;
   display: flex;
   flex-direction: row;
-  justify-content: center;
-  gap: 1rem;
+  justify-content: safe center;
+  gap: 2rem;
   padding: 10px;
   background-color: ${(props) => props.containerColor};
   border-radius: 5px;
@@ -186,11 +205,11 @@ const StyledTabItem = styled.button<
   > & { active?: boolean }
 >`
   box-sizing: border-box;
-  padding: 5px;
+  padding: 5px 1rem;
   border-radius: 5px;
   border: none;
   width: fit-content;
-  min-width: 10rem;
+  min-width: fit-content;
   height: 2rem;
   background-color: ${(props) =>
     props.active ? props.buttonHoverColor : props.buttonColor};

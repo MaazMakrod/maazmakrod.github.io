@@ -41,9 +41,16 @@ const buildStyles = (
 export const buildGridChildStyles = (
   startCoordinate: GridPosition,
   endCoordinate?: GridPosition,
+  display?: StylesValue,
 ) => {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const styles: any = {};
+
+  if (!display) {
+    display = {
+      [BREAKPOINTS.DEFAULT]: "flex",
+    };
+  }
 
   for (const breakpoint of BREAKPOINTS_ARRAY) {
     styles[breakpoint] = {};
@@ -61,11 +68,14 @@ export const buildGridChildStyles = (
       styles[breakpoint]["grid-row-end"] =
         `${endCoordinate[breakpoint][1] + 1}`;
     }
+
+    if (display?.[breakpoint]) {
+      styles[breakpoint]["display"] = display[breakpoint];
+    }
   }
 
   styles[BREAKPOINTS.DEFAULT] = {
     ...styles[BREAKPOINTS.DEFAULT],
-    display: "flex",
   };
 
   return mapCssToBreakpoints(styles);

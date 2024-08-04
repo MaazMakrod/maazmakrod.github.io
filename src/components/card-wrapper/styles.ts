@@ -311,6 +311,7 @@ const buildStyles = (
   width?: StylesValue,
   height?: StylesValue,
   borderRadius?: StylesValue,
+  display?: StylesValue,
 ) => {
   const {
     blob = false,
@@ -355,6 +356,7 @@ const buildStyles = (
       mapStylesValuesToBreakpoints({
         width,
         height,
+        display,
         "border-radius": borderRadius,
       }),
     ),

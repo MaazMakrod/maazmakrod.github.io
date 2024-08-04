@@ -12,6 +12,7 @@ type CardGridChild = {
   component: ReactNode;
   startCoordinate: GridPosition;
   endCoordinate?: GridPosition;
+  display?: StylesValue;
 };
 
 export type CardGridProps = {
@@ -43,6 +44,7 @@ const CardGrid: React.FC<CardGridProps> = ({
         <StyledCardGridChild
           startCoordinate={child.startCoordinate}
           endCoordinate={child?.endCoordinate}
+          display={child?.display}
           key={`card-grid-child-${i}`}
         >
           {child.component}
@@ -68,11 +70,15 @@ const StyledCardGridWrapper = styled.div<
 `;
 
 const StyledCardGridChild = styled.div<
-  Pick<CardGridChild, "startCoordinate" | "endCoordinate">
+  Pick<CardGridChild, "startCoordinate" | "endCoordinate" | "display">
 >`
   box-sizing: border-box;
   ${(props) =>
-    buildGridChildStyles(props.startCoordinate, props?.endCoordinate)};
+    buildGridChildStyles(
+      props.startCoordinate,
+      props?.endCoordinate,
+      props?.display,
+    )};
 `;
 
 export default CardGrid;

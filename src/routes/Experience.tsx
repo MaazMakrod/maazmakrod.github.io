@@ -1,6 +1,6 @@
 import { BREAKPOINTS } from "../styles/helpers";
 import { ImageCard, TextCard } from "../components";
-import { COLORS } from "../styles/theme";
+import { COLORS, CONTENT_WIDTH } from "../styles/theme";
 import { Link } from "../icons";
 import { TabCard } from "../components/tab-card";
 import {
@@ -522,6 +522,9 @@ function Experience() {
       textColor: COLORS.white,
     },
     tabs: generateTabs(tabArgs),
+    width: {
+      [BREAKPOINTS.DEFAULT]: CONTENT_WIDTH,
+    },
   };
 
   return <TabCard {...(tabCardArgs as TabCardProps)} />;

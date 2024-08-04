@@ -61,10 +61,12 @@ function About() {
       [BREAKPOINTS.DEFAULT]: CONTENT_HEIGHT,
     },
     numberRows: {
-      [BREAKPOINTS.DEFAULT]: "3",
+      [BREAKPOINTS.DEFAULT]: "4",
+      [BREAKPOINTS.MEDIUM]: "3",
     },
     numberCols: {
-      [BREAKPOINTS.DEFAULT]: "4",
+      [BREAKPOINTS.DEFAULT]: "2",
+      [BREAKPOINTS.MEDIUM]: "4",
     },
     gap: {
       [BREAKPOINTS.DEFAULT]: "1rem",
@@ -73,6 +75,10 @@ function About() {
       {
         startCoordinate: {
           [BREAKPOINTS.DEFAULT]: [1, 1],
+        },
+        display: {
+          [BREAKPOINTS.DEFAULT]: "none",
+          [BREAKPOINTS.MEDIUM]: "unset",
         },
         component: (
           <TextCard
@@ -118,7 +124,8 @@ function About() {
       },
       {
         startCoordinate: {
-          [BREAKPOINTS.DEFAULT]: [2, 1],
+          [BREAKPOINTS.DEFAULT]: [1, 1],
+          [BREAKPOINTS.MEDIUM]: [2, 1],
         },
         component: (
           <ImageCard
@@ -149,6 +156,10 @@ function About() {
         },
         endCoordinate: {
           [BREAKPOINTS.DEFAULT]: [4, 1],
+        },
+        display: {
+          [BREAKPOINTS.DEFAULT]: "none",
+          [BREAKPOINTS.MEDIUM]: "unset",
         },
         component: (
           <CarouselCard
@@ -408,10 +419,12 @@ function About() {
       },
       {
         startCoordinate: {
-          [BREAKPOINTS.DEFAULT]: [2, 2],
+          [BREAKPOINTS.DEFAULT]: [2, 1],
+          [BREAKPOINTS.MEDIUM]: [2, 2],
         },
         endCoordinate: {
-          [BREAKPOINTS.DEFAULT]: [3, 2],
+          [BREAKPOINTS.DEFAULT]: [2, 2],
+          [BREAKPOINTS.MEDIUM]: [3, 2],
         },
         component: (
           <TextCard
@@ -581,6 +594,10 @@ function About() {
         startCoordinate: {
           [BREAKPOINTS.DEFAULT]: [3, 3],
         },
+        display: {
+          [BREAKPOINTS.DEFAULT]: "none",
+          [BREAKPOINTS.MEDIUM]: "unset",
+        },
         component: (
           <ImageCard
             src={mail}
@@ -673,10 +690,12 @@ function About() {
       },
       {
         startCoordinate: {
-          [BREAKPOINTS.DEFAULT]: [4, 2],
+          [BREAKPOINTS.DEFAULT]: [1, 4],
+          [BREAKPOINTS.MEDIUM]: [4, 2],
         },
         endCoordinate: {
-          [BREAKPOINTS.DEFAULT]: [4, 3],
+          [BREAKPOINTS.DEFAULT]: [2, 4],
+          [BREAKPOINTS.MEDIUM]: [4, 3],
         },
         component: (
           <TextCard

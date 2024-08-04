@@ -7,7 +7,13 @@ import React, {
   useState,
 } from "react";
 import styled from "styled-components";
-import { BREAKPOINTS, Position, StylesValue } from "../../styles/helpers";
+import {
+  BREAKPOINTS,
+  mapCssToBreakpoints,
+  mapStylesValuesToBreakpoints,
+  Position,
+  StylesValue,
+} from "../../styles/helpers";
 import buildStyles, { buildSlideStyles } from "./styles";
 import { Play, Pause } from "../../icons";
 import { Icon } from "../icon";
@@ -32,6 +38,7 @@ export type CarouselCardProps = {
   slides: Array<ReactNode>;
   width: StylesValue;
   height: StylesValue;
+  display?: StylesValue;
   borderRadius?: StylesValue;
   autoplay?: boolean;
   playBtn?: boolean;
@@ -67,6 +74,7 @@ const debounce = (fn: Function, ms = 300) => {
 const CarouselCard: React.FC<CarouselCardProps> = ({
   slides,
   width,
+  display,
   height,
   borderRadius,
   autoplay,
@@ -120,7 +128,7 @@ const CarouselCard: React.FC<CarouselCardProps> = ({
   const debouncedHandleContainerScroll = debounce(handleContainerScroll);
 
   return (
-    <StyledCarouselWrapper>
+    <StyledCarouselWrapper display={display}>
       {playBtn && playBtnProps && (
         <Icon
           SvgImage={playing ? Pause : Play}
@@ -192,12 +200,19 @@ const CarouselCard: React.FC<CarouselCardProps> = ({
   );
 };
 
-const StyledCarouselWrapper = styled.div`
+const StyledCarouselWrapper = styled.div<{ display?: StylesValue }>`
   position: relative;
   isolation: isolate;
   width: 100%;
   height: 100%;
   box-sizing: border-box;
+
+  ${(props) =>
+    mapCssToBreakpoints(
+      mapStylesValuesToBreakpoints({
+        display: props.display,
+      }),
+    )}
 `;
 
 const StyledCarouselSlide = styled.div<
