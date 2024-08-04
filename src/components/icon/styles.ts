@@ -52,6 +52,7 @@ const buildStyles = (
       ...styles[BREAKPOINTS.DEFAULT],
       transition: `all ${hoverOptions.timing}ms ${hoverOptions.easingFunction ? hoverOptions?.easingFunction : "ease"}`,
       "&:hover": genHoverStyle(hoverOptions.color, hoverOptions.filter),
+      "&:focus": genHoverStyle(hoverOptions.color, hoverOptions.filter),
     };
   }
 

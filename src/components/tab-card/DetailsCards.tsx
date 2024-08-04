@@ -43,14 +43,14 @@ const DetailsCard: React.FC<DetailsProps> = ({
         text={positionLength}
         color={textColor}
         tagName="p"
-        types={["p"]}
+        types={["p", "bold"]}
         fade
       />
       <Text
         text={description}
         color={textColor}
         tagName="p"
-        types={["pLarge"]}
+        types={["pLarge", "bold"]}
         fade
       />
     </div>

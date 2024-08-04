@@ -11,19 +11,7 @@ import { HandCursor } from "../icons";
 import { CardWrapperProps } from "../components/card-wrapper/CardWrapper";
 import { TextObject, TextProps } from "../components/text/Text";
 
-/**
- * Projects to Discuss:
- * Full stack blogging application
- * Caching Web server (operating systems)
- * Messaging Application (networks)
- * Camera Thing (ECE342)
- * AI Model for Emotion Analysis (APS360)
- * Mapping Application
- * Forest Life Simulation
- */
-
 // TODO: Add in github repo links and stuff
-
 type ChildComponentGeneration = Array<{
   textPropsOverlay: Array<TextProps | TextObject>;
   textPropsContent: Array<TextProps | TextObject>;
@@ -344,7 +332,7 @@ function Projects() {
             url: "https://github.com/MaazMakrod/Blog-Application",
             target: "_blank",
           },
-        }
+        },
       ],
       textPropsOverlay: [
         {
@@ -419,7 +407,7 @@ function Projects() {
             url: "https://github.com/MaazMakrod/Blog-Application",
             target: "_blank",
           },
-        }
+        },
       ],
       textPropsOverlay: [
         {
@@ -494,7 +482,7 @@ function Projects() {
             url: "https://github.com/MaazMakrod/Blog-Application",
             target: "_blank",
           },
-        }
+        },
       ],
       textPropsOverlay: [
         {
@@ -569,7 +557,7 @@ function Projects() {
             url: "https://github.com/MaazMakrod/Blog-Application",
             target: "_blank",
           },
-        }
+        },
       ],
       textPropsOverlay: [
         {

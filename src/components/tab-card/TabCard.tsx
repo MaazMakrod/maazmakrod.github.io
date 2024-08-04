@@ -100,7 +100,14 @@ const composeTabArgs = (
 
 const TabCard: React.FC<TabCardProps> = ({ tabs, tabButtonStyle }) => {
   const [active, setActive] = useState<number>(0);
-  const handleTabChange = (i: number) => setActive(i);
+  const [display, setDispay] = useState<number>(0);
+  const [opacity, setOpacity] = useState<number>(0);
+
+  const handleTabChange = (i: number) => {
+    setOpacity(i);
+    setTimeout(() => setDispay(i), 300);
+    setTimeout(() => setActive(i), 310);
+  };
 
   return (
     <StyledTabContainer>
@@ -126,6 +133,8 @@ const TabCard: React.FC<TabCardProps> = ({ tabs, tabButtonStyle }) => {
         {tabs.map((t, index) => (
           <StyledTabContent
             active={index === active}
+            display={index === display}
+            opacity={index === opacity}
             key={`tab-content-${t.buttonText}`}
           >
             <CardGrid {...composeTabArgs(t.logo, t.details, t.mainContent)} />
@@ -200,7 +209,11 @@ const StyledTabContentContainer = styled.div`
   grid-template-columns: 1fr;
 `;
 
-const StyledTabContent = styled.div<{ active: boolean }>`
+const StyledTabContent = styled.div<{
+  active: boolean;
+  display: boolean;
+  opacity: boolean;
+}>`
   box-sizing: border-box;
   width: 100%;
   grid-column-start: 1;
@@ -208,11 +221,12 @@ const StyledTabContent = styled.div<{ active: boolean }>`
   grid-column-end: span 1;
   padding: 10px;
   transition:
-    opacity 1s,
+    opacity 0.3s,
     transform 1s;
-  opacity: ${(props) => (props.active ? "1" : "0")};
+  opacity: ${(props) => (props.opacity ? "1" : "0")};
   transform: ${(props) =>
     props.active ? "translateX(0%)" : "translateX(100%)"};
+  display: ${(props) => (props.display ? "auto" : "none")};
 `;
 
 export default TabCard;

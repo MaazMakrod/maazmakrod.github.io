@@ -19,10 +19,21 @@ export type NavigationProps = {
 
 const Navigation: React.FC<NavigationProps> = ({ links, activeLink }) => {
   const [opened, setOpened] = useState(false);
+  const [display, setDisplay] = useState(false);
+
+  const handleClick = () => {
+    if (display) {
+      setOpened(false);
+      setTimeout(() => setDisplay(false), 500);
+    } else {
+      setDisplay(true);
+      setTimeout(() => setOpened(true), 100);
+    }
+  };
 
   return (
     <StyledNavigation>
-      <StyledHamburger opened={opened} onClick={() => setOpened(!opened)}>
+      <StyledHamburger opened={opened} onClick={() => handleClick()}>
         <StyledHamburgerLine />
         <StyledHamburgerLine />
         <StyledHamburgerLine />
@@ -40,7 +51,7 @@ const Navigation: React.FC<NavigationProps> = ({ links, activeLink }) => {
         />
       </StyledMenuItem>
 
-      <StyledMenuItems opened={opened}>
+      <StyledMenuItems opened={opened} display={display}>
         {links.map((link, index) => {
           return (
             <StyledMenuItem
@@ -83,6 +94,7 @@ const StyledMenuItem = styled.li<{
 
 const StyledMenuItems = styled.ul<{
   opened: boolean;
+  display: boolean;
 }>`
   list-style: none;
   background-color: ${COLORS.background};
@@ -100,6 +112,7 @@ const StyledMenuItems = styled.ul<{
   gap: 1rem;
   position: absolute;
   top: 0;
+  display: ${(props) => (props.display ? "auto" : "none")};
 `;
 
 const StyledHamburgerLine = styled.span`
