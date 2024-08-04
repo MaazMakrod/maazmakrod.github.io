@@ -1,14 +1,14 @@
 import { BREAKPOINTS } from "../styles/helpers";
 import { ImageCard, TextCard } from "../components";
-import { CarouselCard } from "../components/carousel-card";
 import { CardGrid } from "../components/card-grid";
 import maazMakrod from "../assets/Maaz_Makrod.png";
 import file from "../assets/file.svg";
 import mail from "../assets/mail.svg";
+import linkedin from "../assets/linkedin.svg";
+import github from "../assets/github.svg";
 import { COLORS, CONTENT_HEIGHT, CONTENT_WIDTH } from "../styles/theme";
 import { Link } from "../icons";
 import {
-  CAROUSEL_DEFAULT_PROPS,
   generateCardWrapperProps,
   ICON_DEFAULT_PROPS,
 } from "../utils/propHelpers";
@@ -368,6 +368,200 @@ function Home() {
         startCoordinate: {
           [BREAKPOINTS.DEFAULT]: [4, 1],
         },
+        display: {
+          [BREAKPOINTS.DEFAULT]: "none",
+          [BREAKPOINTS.MEDIUM]: "unset",
+        },
+        component: (
+          <ImageCard
+            src={linkedin}
+            alt="Take a look at my LinkedIn"
+            aspectRatio="4/3"
+            imageWidth={{ [BREAKPOINTS.DEFAULT]: "100%" }}
+            imageHeight={{ [BREAKPOINTS.DEFAULT]: "100%" }}
+            objectFit="fill"
+            lazyLoad
+            cardWrapperProps={
+              {
+                ...generateCardWrapperProps(
+                  "secondary",
+                  "0px",
+                  {
+                    blob: false,
+                  },
+                  true,
+                  {
+                    overlay: true,
+                    slideUpOverlay: true,
+                  },
+                ),
+                overlayBackgroundColor: COLORS.quinary,
+                icon: {
+                  SvgImage: Link,
+                  url: "https://www.linkedin.com/in/maaz-makrod/",
+                  position: {
+                    bottom: 10,
+                    right: 10,
+                  },
+                  ...ICON_DEFAULT_PROPS["primary"],
+                } as IconProps,
+                overlay: (
+                  <TextCard
+                    useFlex
+                    horizontalPosition="left"
+                    verticalPosition="top"
+                    textProps={[
+                      {
+                        content: {
+                          text: `Take a look at my `,
+                          color: COLORS.white,
+                          tagName: "p",
+                          types: ["pLarge", "bold"],
+                          fade: true,
+                          nestedText: [
+                            {
+                              content: {
+                                text: `LinkedIn`,
+                                color: COLORS.white,
+                                tagName: "span",
+                                types: ["pLarge"],
+                                margin: "0",
+                                fade: true,
+                                underline: true,
+                                underlineColor: `${COLORS.white} 0 0`,
+                                underlineSize: {
+                                  [BREAKPOINTS.DEFAULT]: "2px",
+                                },
+                              },
+                            },
+                          ],
+                        },
+                      },
+                    ]}
+                    cardWrapperProps={
+                      generateCardWrapperProps("primary", "10px", {
+                        blob: true,
+                        blobAnimations: {
+                          animateBlobPosition: false,
+                          pulseBlob: false,
+                          growBlob: false,
+                        },
+                        blobSize: "small",
+                        startingBlobShape: 1,
+                        blobPosition: {
+                          bottom: 10,
+                          left: 15,
+                        },
+                      }) as CardWrapperProps
+                    }
+                  />
+                ),
+              } as CardWrapperProps
+            }
+          />
+        ),
+      },
+      {
+        startCoordinate: {
+          [BREAKPOINTS.DEFAULT]: [5, 1],
+        },
+        display: {
+          [BREAKPOINTS.DEFAULT]: "none",
+          [BREAKPOINTS.MEDIUM]: "unset",
+        },
+        component: (
+          <ImageCard
+            src={github}
+            alt="Check out my Github"
+            aspectRatio="4/3"
+            imageWidth={{ [BREAKPOINTS.DEFAULT]: "100%" }}
+            imageHeight={{ [BREAKPOINTS.DEFAULT]: "100%" }}
+            objectFit="fill"
+            lazyLoad
+            cardWrapperProps={
+              {
+                ...generateCardWrapperProps(
+                  "primary",
+                  "0px",
+                  {
+                    blob: false,
+                  },
+                  true,
+                  {
+                    overlay: true,
+                    slideUpOverlay: true,
+                  },
+                ),
+                overlayBackgroundColor: COLORS.primary,
+                icon: {
+                  SvgImage: Link,
+                  url: "https://github.com/maazmakrod",
+                  position: {
+                    top: 10,
+                    right: 10,
+                  },
+                  ...ICON_DEFAULT_PROPS["primary"],
+                } as IconProps,
+                overlay: (
+                  <TextCard
+                    useFlex
+                    horizontalPosition="left"
+                    verticalPosition="bottom"
+                    textProps={[
+                      {
+                        content: {
+                          text: `Check out my `,
+                          color: COLORS.primary,
+                          tagName: "p",
+                          types: ["pLarge", "bold"],
+                          fade: true,
+                          nestedText: [
+                            {
+                              content: {
+                                text: `Github`,
+                                color: COLORS.primary,
+                                tagName: "span",
+                                types: ["pLarge"],
+                                margin: "0",
+                                fade: true,
+                                underline: true,
+                                underlineColor: `${COLORS.primary} 0 0`,
+                                underlineSize: {
+                                  [BREAKPOINTS.DEFAULT]: "2px",
+                                },
+                              },
+                            },
+                          ],
+                        },
+                      },
+                    ]}
+                    cardWrapperProps={
+                      generateCardWrapperProps("secondary", "10px", {
+                        blob: true,
+                        blobAnimations: {
+                          animateBlobPosition: false,
+                          pulseBlob: false,
+                          growBlob: false,
+                        },
+                        blobSize: "small",
+                        startingBlobShape: 0,
+                        blobPosition: {
+                          top: 10,
+                          left: 15,
+                        },
+                      }) as CardWrapperProps
+                    }
+                  />
+                ),
+              } as CardWrapperProps
+            }
+          />
+        ),
+      },
+      {
+        startCoordinate: {
+          [BREAKPOINTS.DEFAULT]: [4, 2],
+        },
         endCoordinate: {
           [BREAKPOINTS.DEFAULT]: [5, 3],
         },
@@ -376,59 +570,50 @@ function Home() {
           [BREAKPOINTS.MEDIUM]: "unset",
         },
         component: (
-          <CarouselCard
-            slides={[
-              <TextCard
-                cardWrapperProps={{
-                  ...(generateCardWrapperProps(
-                    "primary",
-                    "10px",
-                    {
-                      blob: true,
-                      blobAnimations: {
-                        growBlob: true,
-                        pulseBlob: true,
-                        animateBlobPosition: true,
-                      },
-                      blobSize: "large",
-                      blobPosition: {
-                        top: 0,
-                        left: 20,
-                      },
-                      blobMovementOptions: 1,
-                    },
-                    true,
-                  ) as CardWrapperProps),
-                  icon: {
-                    ...ICON_DEFAULT_PROPS["primary"],
-                    SvgImage: Link,
-                    url: "/projects",
-                    position: {
-                      top: 6,
-                      left: 5,
-                    },
-                  } as IconProps,
-                }}
-                textProps={[
-                  {
-                    content: {
-                      text: `Projects`,
-                      color: COLORS.white,
-                      tagName: "p",
-                      types: ["h1", "bold"],
-                      fade: true,
-                      underline: true,
-                      underlineColor: `${COLORS.white} 0 0`,
-                      underlineSize: {
-                        [BREAKPOINTS.DEFAULT]: "5px",
-                      },
-                    },
+          <TextCard
+            cardWrapperProps={{
+              ...(generateCardWrapperProps(
+                "primary",
+                "10px",
+                {
+                  blob: true,
+                  blobAnimations: {
+                    growBlob: true,
+                    pulseBlob: true,
+                    animateBlobPosition: true,
                   },
-                ]}
-              />,
+                  blobSize: "large",
+                  blobPosition: {
+                    top: 0,
+                    left: 20,
+                  },
+                  blobMovementOptions: 1,
+                },
+                true,
+              ) as CardWrapperProps),
+              icon: {
+                ...ICON_DEFAULT_PROPS["primary"],
+                SvgImage: Link,
+                url: "/projects",
+                position: {
+                  bottom: 5,
+                  right: 5,
+                },
+              } as IconProps,
+            }}
+            textProps={[
+              {
+                content: {
+                  text: `At school and on the side I have coded some interesting projects. From peer to peer messaging systems, to fullstack web applications, I have coded applications in both low level and high level programming languages`,
+                  color: COLORS.white,
+                  tagName: "h1",
+                  types: ["pLarge"],
+                  fade: true,
+                },
+              },
             ]}
-            autoplay={false}
-            {...CAROUSEL_DEFAULT_PROPS}
+            horizontalPosition="left"
+            verticalPosition="top"
           />
         ),
       },

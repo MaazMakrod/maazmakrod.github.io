@@ -16,7 +16,7 @@ export type IconProps = {
   url?: string;
   target?: string;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  SvgImage: React.FC<any>;
+  SvgImage: React.FC<any> | string;
   color?: string;
   stroke?: string;
   strokeWidth?: string;
@@ -45,6 +45,14 @@ const Icon: React.FC<IconProps> = ({
   svgProps,
   target,
 }) => {
+  const renderContent = () => {
+    if (typeof SvgImage === "string") {
+      return <img src={SvgImage} />
+    } else {
+      return <SvgImage {...svgProps} />;
+    }
+  }
+
   return (
     <StyledSvgWrapper
       as={tag}
@@ -61,7 +69,7 @@ const Icon: React.FC<IconProps> = ({
       {...(tag === "button" && { onClick: onClick })}
       {...(tag === "a" && { href: url, target: target })}
     >
-      <SvgImage {...svgProps} />
+      {renderContent()}
     </StyledSvgWrapper>
   );
 };

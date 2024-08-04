@@ -69,8 +69,8 @@ const composeTabArgs = (
           [BREAKPOINTS.DEFAULT]: [2, 2],
         },
         display: {
-          [BREAKPOINTS.DEFAULT]: 'none',
-          [BREAKPOINTS.MEDIUM]: 'unset',
+          [BREAKPOINTS.DEFAULT]: "none",
+          [BREAKPOINTS.MEDIUM]: "unset",
         },
         component: logo,
       },

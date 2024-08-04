@@ -11,7 +11,6 @@ import { HandCursor } from "../icons";
 import { CardWrapperProps } from "../components/card-wrapper/CardWrapper";
 import { TextObject, TextProps } from "../components/text/Text";
 
-// TODO: Add in github repo links and stuff
 type ChildComponentGeneration = Array<{
   textPropsOverlay: Array<TextProps | TextObject>;
   textPropsContent: Array<TextProps | TextObject>;
