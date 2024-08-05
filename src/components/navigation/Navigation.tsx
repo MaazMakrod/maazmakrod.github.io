@@ -59,6 +59,7 @@ const Navigation: React.FC<NavigationProps> = ({ links, activeLink }) => {
               key={`nav-link-${index}`}
               disableHover={link.disableHover}
               active={Boolean(activeLink[link.text])}
+              onClick={() => handleClick()}
             >
               <Text
                 text={link.text}

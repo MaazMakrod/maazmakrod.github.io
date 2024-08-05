@@ -305,7 +305,7 @@ function About() {
                             underlineSize: {
                               [BREAKPOINTS.DEFAULT]: "2px",
                             },
-                            url: `${APP_BASE}/experience`,
+                            url: `${APP_BASE}experience`,
                           },
                         },
                         {
@@ -457,7 +457,7 @@ function About() {
                         underlineSize: {
                           [BREAKPOINTS.DEFAULT]: "2px",
                         },
-                        url: `${APP_BASE}/experience`,
+                        url: `${APP_BASE}experience`,
                       },
                     },
                   ],

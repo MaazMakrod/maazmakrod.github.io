@@ -109,7 +109,7 @@ function Home() {
               icon: {
                 ...ICON_DEFAULT_PROPS["primary"],
                 SvgImage: Link,
-                url: `${APP_BASE}/about`,
+                url: `${APP_BASE}about`,
                 position: {
                   bottom: 5,
                   right: 10,
@@ -167,7 +167,7 @@ function Home() {
               icon: {
                 ...ICON_DEFAULT_PROPS["primary"],
                 SvgImage: Link,
-                url: `${APP_BASE}/experience`,
+                url: `${APP_BASE}experience`,
                 position: {
                   top: 5,
                   left: 5,
@@ -599,7 +599,7 @@ function Home() {
               icon: {
                 ...ICON_DEFAULT_PROPS["primary"],
                 SvgImage: Link,
-                url: `${APP_BASE}/projects`,
+                url: `${APP_BASE}projects`,
                 position: {
                   bottom: 5,
                   right: 5,

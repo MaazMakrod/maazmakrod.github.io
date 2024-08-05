@@ -1,4 +1,4 @@
-import { Outlet, useMatch } from "react-router-dom";
+import { Outlet, useLocation, useMatch } from "react-router-dom";
 import { Footer } from "../components/footer";
 import { Navigation } from "../components/navigation";
 import { File, Github, Linkedin, Mail } from "../icons";
@@ -12,15 +12,15 @@ const NAVIGATION_LINKS = [
   },
   {
     text: "Experience",
-    url: `${APP_BASE}/experience`,
+    url: `${APP_BASE}experience`,
   },
   {
     text: "Projects",
-    url: `${APP_BASE}/projects`,
+    url: `${APP_BASE}projects`,
   },
   {
     text: "About",
-    url: `${APP_BASE}/about`,
+    url: `${APP_BASE}about`,
   },
 ];
 
@@ -45,11 +45,14 @@ const FOOTER_LINKS = [
 
 function Layout() {
   const activeLink = {
-    [NAVIGATION_LINKS[0].text]: useMatch(NAVIGATION_LINKS[0].url),
-    [NAVIGATION_LINKS[1].text]: useMatch(NAVIGATION_LINKS[1].url),
-    [NAVIGATION_LINKS[2].text]: useMatch(NAVIGATION_LINKS[2].url),
-    [NAVIGATION_LINKS[3].text]: useMatch(NAVIGATION_LINKS[3].url),
+    [NAVIGATION_LINKS[0].text]: useMatch((NAVIGATION_LINKS[0].url).replace('#', '/')),
+    [NAVIGATION_LINKS[1].text]: useMatch((NAVIGATION_LINKS[1].url).replace('#', '/')),
+    [NAVIGATION_LINKS[2].text]: useMatch((NAVIGATION_LINKS[2].url).replace('#', '/')),
+    [NAVIGATION_LINKS[3].text]: useMatch((NAVIGATION_LINKS[3].url).replace('#', '/')),
   };
+
+  const location = useLocation();
+  console.log(location.pathname);
 
   return (
     <>
