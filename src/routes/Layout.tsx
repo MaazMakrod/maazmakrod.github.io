@@ -2,6 +2,7 @@ import { Outlet, useMatch } from "react-router-dom";
 import { Footer } from "../components/footer";
 import { Navigation } from "../components/navigation";
 import { File, Github, Linkedin, Mail } from "../icons";
+import resume from "../assets/Maaz_Makrod_Resume.pdf";
 
 const NAVIGATION_LINKS = [
   {
@@ -37,7 +38,7 @@ const FOOTER_LINKS = [
   },
   {
     svg: File,
-    url: "https://www.linkedin.com/in/maaz-makrod/",
+    url: resume,
   },
 ];
 

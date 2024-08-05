@@ -9,6 +9,7 @@ import { CardGrid } from "../components/card-grid";
 import maazMakrod from "../assets/Maaz_Makrod.png";
 import file from "../assets/file.svg";
 import mail from "../assets/mail.svg";
+import resume from "../assets/Maaz_Makrod_Resume.pdf";
 import {
   COLORS,
   CONTENT_HEIGHT,
@@ -526,11 +527,12 @@ function About() {
                 ),
                 icon: {
                   SvgImage: Link,
-                  url: "mailto:maaz.makrod@gmail.com",
+                  url: resume,
                   position: {
                     bottom: 10,
                     left: 10,
                   },
+                  target: "_blank",
                   ...ICON_DEFAULT_PROPS["primary"],
                 } as IconProps,
                 overlay: (

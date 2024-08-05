@@ -6,7 +6,6 @@ import Experience from "./routes/Experience";
 import About from "./routes/About";
 import Projects from "./routes/Projects";
 
-// TODO: Add in resume
 function App() {
   const router = createBrowserRouter([
     {

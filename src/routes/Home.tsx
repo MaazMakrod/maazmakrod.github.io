@@ -6,6 +6,7 @@ import file from "../assets/file.svg";
 import mail from "../assets/mail.svg";
 import linkedin from "../assets/linkedin.svg";
 import github from "../assets/github.svg";
+import resume from "../assets/Maaz_Makrod_Resume.pdf";
 import { COLORS, CONTENT_HEIGHT, CONTENT_WIDTH } from "../styles/theme";
 import { Link } from "../icons";
 import {
@@ -204,11 +205,12 @@ function Home() {
                 ),
                 icon: {
                   SvgImage: Link,
-                  url: "mailto:maaz.makrod@gmail.com",
+                  url: resume,
                   position: {
                     bottom: 10,
                     left: 10,
                   },
+                  target: "_blank",
                   ...ICON_DEFAULT_PROPS["primary"],
                 } as IconProps,
                 overlay: (
