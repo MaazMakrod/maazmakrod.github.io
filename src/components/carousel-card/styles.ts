@@ -16,7 +16,7 @@ export const buildSlideStyles = (width: StylesValue, height: StylesValue) => {
 
   styles[BREAKPOINTS.DEFAULT] = {
     ...styles[BREAKPOINTS.DEFAULT],
-    ...(!isSafari && {"scroll-snap-align": "center"}),
+    ...(!isSafari && { "scroll-snap-align": "center" }),
     "flex-shrink": 0,
   };
 

@@ -7,7 +7,6 @@ import About from "./routes/About";
 import Projects from "./routes/Projects";
 
 // TODO: Add in github repo links and stuff
-// TODO: Add in bolding for text in experience section
 // TODO: Add in resume
 function App() {
   const router = createBrowserRouter([

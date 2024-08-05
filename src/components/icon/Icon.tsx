@@ -47,11 +47,11 @@ const Icon: React.FC<IconProps> = ({
 }) => {
   const renderContent = () => {
     if (typeof SvgImage === "string") {
-      return <img src={SvgImage} />
+      return <img src={SvgImage} />;
     } else {
       return <SvgImage {...svgProps} />;
     }
-  }
+  };
 
   return (
     <StyledSvgWrapper

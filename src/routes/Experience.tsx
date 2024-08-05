@@ -133,7 +133,7 @@ const DETAILS_CARD_STYLING = {
 
 const COMMON_LIST_PROPS = {
   tagName: "li",
-  types: ["p"],
+  types: ["p", "medium"],
   margin: "0 0 10px 0",
 };
 
@@ -213,7 +213,7 @@ function Experience() {
         {
           content: {
             text: `As a developer intern at Konrad Group for 16 months, I worked with a lot of different tech stacks to do some pretty cool stuff. Here's a recap of what I did: `,
-            types: ["p"],
+            types: ["p", "medium"],
             tagName: "p",
             fade: true,
             color: COLORS.primary,
@@ -225,44 +225,247 @@ function Experience() {
                   nestedText: [
                     {
                       content: {
-                        text: "Developed a backend server for a client from scratch so that they can reduce the dependency of their system on third party services. This involved setting up the infrastructure using Terraform and creating a server using Express and tRPC.",
+                        text: "Developed a backend server for a client from scratch so that they can ",
                         ...COMMON_LIST_PROPS,
+                        nestedText: [
+                          {
+                            content: {
+                              text: "reduce the dependency of their system on third party services.",
+                              ...COMMON_LIST_PROPS,
+                              types: ["p", "bold"],
+                              tagName: "span",
+                            },
+                          },
+                          {
+                            content: {
+                              text: "This involved setting up the ",
+                              ...COMMON_LIST_PROPS,
+                              tagName: "span",
+                            },
+                          },
+                          {
+                            content: {
+                              text: "infrastructure using Terraform",
+                              ...COMMON_LIST_PROPS,
+                              types: ["p", "bold"],
+                              tagName: "span",
+                            },
+                          },
+                          {
+                            content: {
+                              text: " and creating a server using ",
+                              ...COMMON_LIST_PROPS,
+                              tagName: "span",
+                            },
+                          },
+                          {
+                            content: {
+                              text: "Express and tRPC.",
+                              ...COMMON_LIST_PROPS,
+                              types: ["p", "bold"],
+                              tagName: "span",
+                            },
+                          },
+                        ],
                       },
                     },
                     {
                       content: {
-                        text: "Coded a script to migrate 10s of thousands of assets from a client's CMS space to a DAM so that they can reduce costs and have a single source of truth for asset storage. This solution had to be backwards compatible so that the client's system would not break when migrating content.",
+                        text: "Coded a script to migrate ",
                         ...COMMON_LIST_PROPS,
+                        nestedText: [
+                          {
+                            content: {
+                              text: "10s of thousands of assets",
+                              ...COMMON_LIST_PROPS,
+                              types: ["p", "bold"],
+                              tagName: "span",
+                            },
+                          },
+                          {
+                            content: {
+                              text: " from a client's CMS space to a DAM so that they can ",
+                              ...COMMON_LIST_PROPS,
+                              tagName: "span",
+                            },
+                          },
+                          {
+                            content: {
+                              text: "reduce costs and have a single source of truth for asset storage.",
+                              ...COMMON_LIST_PROPS,
+                              types: ["p", "bold"],
+                              tagName: "span",
+                            },
+                          },
+                          {
+                            content: {
+                              text: " This solution had to be backwards compatible so that the client's system would not break when migrating content.",
+                              ...COMMON_LIST_PROPS,
+                              tagName: "span",
+                            },
+                          },
+                        ],
                       },
                     },
                     {
                       content: {
-                        text: "Identified and resolved an issue where a client's system made 100s of extra calls to a third party service. This was due to a concurrency issue between AWS lambda functions.",
+                        text: "Identified and resolved ",
                         ...COMMON_LIST_PROPS,
+                        types: ["p", "bold"],
+                        nestedText: [
+                          {
+                            content: {
+                              text: "an issue where a client's system made ",
+                              ...COMMON_LIST_PROPS,
+                              tagName: "span",
+                            },
+                          },
+                          {
+                            content: {
+                              text: "100s of extra calls to a third party service.",
+                              ...COMMON_LIST_PROPS,
+                              types: ["p", "bold"],
+                              tagName: "span",
+                            },
+                          },
+                          {
+                            content: {
+                              text: " This was due to a concurrency problem between AWS lambda functions.",
+                              ...COMMON_LIST_PROPS,
+                              tagName: "span",
+                            },
+                          },
+                        ],
                       },
                     },
                     {
                       content: {
-                        text: "Identified and resolved a critical production bug which caused a client system to go down. A short term fix was produced within 2 hours of site breakage and a long term fix was produced within a week.",
+                        text: "Identified and resolved a critical production bug",
                         ...COMMON_LIST_PROPS,
+                        types: ["p", "bold"],
+                        nestedText: [
+                          {
+                            content: {
+                              text: " which caused a client system to go down. A short term fix was produced within 2 hours of site breakage and a long term fix was produced within a week.",
+                              ...COMMON_LIST_PROPS,
+                              tagName: "span",
+                            },
+                          },
+                        ],
                       },
                     },
                     {
                       content: {
-                        text: "Created an internal video processing pipeline that web optimizes videos as well as creates a table of contents summary and timestamps of important topics using OpenAI's API. This saved hours monthly when it came to uploading these videos for internal use.",
+                        text: "Created an ",
                         ...COMMON_LIST_PROPS,
+                        nestedText: [
+                          {
+                            content: {
+                              text: "internal video processing pipeline",
+                              ...COMMON_LIST_PROPS,
+                              types: ["p", "bold"],
+                              tagName: "span",
+                            },
+                          },
+                          {
+                            content: {
+                              text: " that web optimizes videos as well as creates a table of contents summary and timestamps of important topics using ",
+                              ...COMMON_LIST_PROPS,
+                              tagName: "span",
+                            },
+                          },
+                          {
+                            content: {
+                              text: "OpenAI's API.",
+                              ...COMMON_LIST_PROPS,
+                              types: ["p", "bold"],
+                              tagName: "span",
+                            },
+                          },
+                          {
+                            content: {
+                              text: "This saved hours monthly when it came to uploading these videos for internal use.",
+                              ...COMMON_LIST_PROPS,
+                              tagName: "span",
+                            },
+                          },
+                        ],
                       },
                     },
                     {
                       content: {
-                        text: "Worked in a team of 4 developers to produce a multi-class AI classification model for a client. We additionally created a data processing pipeline so that the client could compare the efficacy of different models as well as a backend server to route calls to the AI model.",
+                        text: "Worked in a team of 4 developers to produce a ",
                         ...COMMON_LIST_PROPS,
+                        nestedText: [
+                          {
+                            content: {
+                              text: "multi-class AI classification model for a client.",
+                              ...COMMON_LIST_PROPS,
+                              types: ["p", "bold"],
+                              tagName: "span",
+                            },
+                          },
+                          {
+                            content: {
+                              text: "We additionally created a ",
+                              ...COMMON_LIST_PROPS,
+                              tagName: "span",
+                            },
+                          },
+                          {
+                            content: {
+                              text: "data processing pipeline ",
+                              ...COMMON_LIST_PROPS,
+                              types: ["p", "bold"],
+                              tagName: "span",
+                            },
+                          },
+                          {
+                            content: {
+                              text: "so that the client could compare the efficacy of different models as well as a backend server to route calls to the AI model.",
+                              ...COMMON_LIST_PROPS,
+                              tagName: "span",
+                            },
+                          },
+                        ],
                       },
                     },
                     {
                       content: {
-                        text: "Worked in a team of 3 to enhance an internal toolkit that speeds up developer time when working with AEM. This is done by allowing developers to code their frontend in React rather than the native HTL language that AEM uses.",
+                        text: "Worked in a team of 3 to enhance an internal toolkit that ",
                         ...COMMON_LIST_PROPS,
+                        nestedText: [
+                          {
+                            content: {
+                              text: "speeds up developer time",
+                              ...COMMON_LIST_PROPS,
+                              types: ["p", "bold"],
+                              tagName: "span",
+                            },
+                          },
+                          {
+                            content: {
+                              text: " when working with AEM. This is done by allowing developers to code their frontend in React rather than the native HTL language that AEM uses.",
+                              ...COMMON_LIST_PROPS,
+                              tagName: "span",
+                            },
+                          },
+                          {
+                            content: {
+                              text: "React rather than the native HTL language",
+                              ...COMMON_LIST_PROPS,
+                              types: ["p", "bold"],
+                              tagName: "span",
+                            },
+                          },
+                          {
+                            content: {
+                              text: " that AEM uses.",
+                              ...COMMON_LIST_PROPS,
+                              tagName: "span",
+                            },
+                          },
+                        ],
                       },
                     },
                     {
@@ -318,7 +521,7 @@ function Experience() {
         {
           content: {
             text: `Although I only spent 4 months at Rocscience, the challenging and fast-paced atmosphere resulted in me producing many new features and optimizations for their web application RSLog. Here's what I did:`,
-            types: ["p"],
+            types: ["p", "medium"],
             tagName: "p",
             fade: true,
             color: COLORS.white,
@@ -330,32 +533,155 @@ function Experience() {
                   nestedText: [
                     {
                       content: {
-                        text: "Worked on an application that allows users to create 2D and 3D models of boreholes in their excavation sites using D3.js and Three.js. This allows 1000s of users worldwide to interact with their excavation sites on the web.",
+                        text: "Worked on an application that allows users to ",
                         ...COMMON_LIST_PROPS,
+                        nestedText: [
+                          {
+                            content: {
+                              text: "create 2D and 3D models",
+                              ...COMMON_LIST_PROPS,
+                              types: ["p", "bold"],
+                              tagName: "span",
+                            }
+                          },
+                          {
+                            content: {
+                              text: " of boreholes in their excavation sites using ",
+                              ...COMMON_LIST_PROPS,
+                              tagName: "span",
+                            }
+                          },
+                          {
+                            content: {
+                              text: "D3.js and Three.js.",
+                              ...COMMON_LIST_PROPS,
+                              types: ["p", "bold"],
+                              tagName: "span",
+                            }
+                          },
+                          {
+                            content: {
+                              text: " This allows ",
+                              ...COMMON_LIST_PROPS,
+                              tagName: "span",
+                            }
+                          },
+                          {
+                            content: {
+                              text: "1000s of users worldwide",
+                              ...COMMON_LIST_PROPS,
+                              types: ["p", "bold"],
+                              tagName: "span",
+                            }
+                          },
+                          {
+                            content: {
+                              text: " to interact with their excavation sites on the web.",
+                              ...COMMON_LIST_PROPS,
+                              tagName: "span",
+                            }
+                          }
+                        ]
                       },
                     },
                     {
                       content: {
-                        text: "Utilized Mapbox and Google Map Tiles APIs to render tiles of terrains so that users could view their site in its actual location. This involved a heavy use of geometry to position the model in the correct location relative to the terrain as well as ensure that the terrain fit into the modeling coordinate system.",
+                        text: "Utilized ",
                         ...COMMON_LIST_PROPS,
+                        nestedText: [
+                          {
+                            content: {
+                              text: "Mapbox and Google Map Tiles APIs",
+                              ...COMMON_LIST_PROPS,
+                              types: ["p", "bold"],
+                              tagName: "span",
+                            }
+                          },
+                          {
+                            content: {
+                              text: " to render tiles of terrains so that users could view their site in its actual location. This involved a ",
+                              ...COMMON_LIST_PROPS,
+                              tagName: "span",
+                            }
+                          },
+                          {
+                            content: {
+                              text: "heavy use of geometry",
+                              ...COMMON_LIST_PROPS,
+                              types: ["p", "bold"],
+                              tagName: "span",
+                            }
+                          },
+                          {
+                            content: {
+                              text: " to position the model in the correct location relative to the terrain as well as ensure that the terrain fit into the modeling coordinate system.",
+                              ...COMMON_LIST_PROPS,
+                              tagName: "span",
+                            }
+                          }
+                        ]
                       },
                     },
                     {
                       content: {
-                        text: "Created solutions to export the models to various different formats like DXF (AutoCAD) and KMZ (Google Earth). This allows users to use other software to view their models.",
+                        text: "Created solutions to ",
                         ...COMMON_LIST_PROPS,
+                        nestedText: [
+                          {
+                            content: {
+                              text: "export the models to various different formats",
+                              ...COMMON_LIST_PROPS,
+                              types: ["p", "bold"],
+                              tagName: "span",
+                            }
+                          },
+                          {
+                            content: {
+                              text: " like DXF (AutoCAD) and KMZ (Google Earth). This allows users to use other software to view their models.",
+                              ...COMMON_LIST_PROPS,
+                              tagName: "span",
+                            }
+                          },
+                        ]
                       },
                     },
                     {
                       content: {
-                        text: "Identified and resolved redundancies in the model export files resulting in a reduction of file sizes by 67%.",
+                        text: "Identified and resolved redundancies in the model export files resulting in a ",
                         ...COMMON_LIST_PROPS,
+                        nestedText: [
+                          {
+                            content: {
+                              text: "reduction of file sizes by 67%.",
+                              ...COMMON_LIST_PROPS,
+                              types: ["p", "bold"],
+                              tagName: "span",
+                            }
+                          }
+                        ]
                       },
                     },
                     {
                       content: {
-                        text: "Utilized OOP to implement an image loader tool so that users could load in images (png/jpg/svg) files into their 3D model terrain and view them along with their site.",
+                        text: "Utilized OOP to implement an ",
                         ...COMMON_LIST_PROPS,
+                        nestedText: [
+                          {
+                            content: {
+                              text: "image loader tool",
+                              ...COMMON_LIST_PROPS,
+                              types: ["p", "bold"],
+                              tagName: "span",
+                            }
+                          },
+                          {
+                            content: {
+                              text: " so that users could load in images (png/jpg/svg) files into their 3D model terrain and view them along with their site.",
+                              ...COMMON_LIST_PROPS,
+                              tagName: "span",
+                            }
+                          }
+                        ]
                       },
                     },
                   ],
@@ -399,7 +725,7 @@ function Experience() {
         {
           content: {
             text: `At LabOnWeb I relied heavily on my physics and mathematical knowledge to develop a physics simulation web application. Here's the highlights of my time there:`,
-            types: ["p"],
+            types: ["p", "medium"],
             tagName: "p",
             fade: true,
             color: COLORS.primary,
@@ -411,20 +737,71 @@ function Experience() {
                   nestedText: [
                     {
                       content: {
-                        text: "Worked on an application that allows students to simulate physics experiments on the web rather than in person. This makes it easier to illustrate concepts to students no matter where they are.",
+                        text: "Worked on an application that allows students to ",
                         ...COMMON_LIST_PROPS,
+                        nestedText: [
+                          {
+                            content: {
+                              text: "simulate physics experiments",
+                              ...COMMON_LIST_PROPS,
+                              types: ["p", "bold"],
+                              tagName: "span",
+                            }
+                          },
+                          {
+                            content: {
+                              text: " on the web rather than in person. This makes it easier to illustrate concepts to students no matter where they are.",
+                              ...COMMON_LIST_PROPS,
+                              tagName: "span",
+                            }
+                          },
+                        ]
                       },
                     },
                     {
                       content: {
-                        text: "Expanded the capabilities of the physics computation engine to solve other equations. One example of this is the Navier-Stokes equations which allows one to use partial differential equations to solve for the flow velocity of viscous fluids.",
+                        text: "Expanded the capabilities of the ",
                         ...COMMON_LIST_PROPS,
+                        nestedText: [
+                          {
+                            content: {
+                              text: "physics computation engine to solve other equations.",
+                              ...COMMON_LIST_PROPS,
+                              types: ["p", "bold"],
+                              tagName: "span",
+                            }
+                          },
+                          {
+                            content: {
+                              text: " One example of this is the Navier-Stokes equations which allows one to use partial differential equations to solve for the flow velocity of viscous fluids.",
+                              ...COMMON_LIST_PROPS,
+                              tagName: "span",
+                            }
+                          }
+                        ]
                       },
                     },
                     {
                       content: {
-                        text: "Utilized OOP to add in drag and drop sensors to the GUI so that students could measure things like temperature, velocity, and pressure in different parts of the experiment simultaneously.",
+                        text: "Utilized ",
                         ...COMMON_LIST_PROPS,
+                        nestedText: [
+                          {
+                            content: {
+                              text: "OOP to add in drag and drop sensors to the GUI",
+                              ...COMMON_LIST_PROPS,
+                              types: ["p", "bold"],
+                              tagName: "span",
+                            }
+                          },
+                          {
+                            content: {
+                              text: " so that students could measure things like temperature, velocity, and pressure in different parts of the experiment simultaneously.",
+                              ...COMMON_LIST_PROPS,
+                              tagName: "span",
+                            }
+                          },
+                        ]
                       },
                     },
                   ],
@@ -461,7 +838,7 @@ function Experience() {
         {
           content: {
             text: `The Canadian Sheep Federation was my first experience as a professional software engineer! As an intern in a startup environment, I learned a lot and thrived which resulted in me being given more responsibilities throughout my internship. I started out as a QA Auditor, then was tasked as being the QA lead amongst the interns, and finally moved onto the dev team to create software. Here's a look at what I did:`,
-            types: ["p"],
+            types: ["p", "medium"],
             tagName: "p",
             fade: true,
             color: COLORS.white,
@@ -473,14 +850,64 @@ function Experience() {
                   nestedText: [
                     {
                       content: {
-                        text: "Created an application to monitor the transportation of sheep all across Canada. The goal of this is to eliminate the paper trail of where sheep are in the country and give farmers and inspectors access to a system so that they know where their sheep are all the time.",
+                        text: "Created an application to ",
                         ...COMMON_LIST_PROPS,
+                        nestedText: [
+                          {
+                            content: {
+                              text: "monitor the transportation",
+                              ...COMMON_LIST_PROPS,
+                              types: ["p", "bold"],
+                              tagName: "span",
+                            }
+                          },
+                          {
+                            content: {
+                              text: " of sheep all across Canada. The goal of this is to eliminate the paper trail of where sheep are in the country and give farmers and inspectors access to a system so that they know where their sheep are all the time.",
+                              ...COMMON_LIST_PROPS,
+                              tagName: "span",
+                            }
+                          },
+                        ]
                       },
                     },
                     {
                       content: {
-                        text: "Designed schemas for data storage in MongoDB and performed advanced queries of the system data to generate sheep traceability reports. This improved the traceability algorithm performance by 15%.",
+                        text: "Designed schemas ",
                         ...COMMON_LIST_PROPS,
+                        types: ["p", "bold"],
+                        nestedText: [
+                          {
+                            content: {
+                              text: "for data storage in MongoDB and performed ",
+                              ...COMMON_LIST_PROPS,
+                              tagName: "span",
+                            }
+                          },
+                          {
+                            content: {
+                              text: "advanced queries of the system data",
+                              ...COMMON_LIST_PROPS,
+                              types: ["p", "bold"],
+                              tagName: "span",
+                            }
+                          },
+                          {
+                            content: {
+                              text: " to generate sheep traceability reports. This improved the traceability algorithm ",
+                              ...COMMON_LIST_PROPS,
+                              tagName: "span",
+                            }
+                          },
+                          {
+                            content: {
+                              text: "performance by 15%.",
+                              ...COMMON_LIST_PROPS,
+                              types: ["p", "bold"],
+                              tagName: "span",
+                            }
+                          },
+                        ]
                       },
                     },
                     {
