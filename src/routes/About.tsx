@@ -31,6 +31,7 @@ import { CardGridProps } from "../components/card-grid/CardGrid";
 import Typewriter from "typewriter-effect";
 import styled from "styled-components";
 import { TypesOptions } from "../components/text/Text";
+import { APP_BASE } from "../utils/constants";
 
 const StyledTypeWriterWrapper = styled.span<{
   types: TypesOptions[];
@@ -304,7 +305,7 @@ function About() {
                             underlineSize: {
                               [BREAKPOINTS.DEFAULT]: "2px",
                             },
-                            url: "/experience",
+                            url: `${APP_BASE}/experience`,
                           },
                         },
                         {
@@ -456,7 +457,7 @@ function About() {
                         underlineSize: {
                           [BREAKPOINTS.DEFAULT]: "2px",
                         },
-                        url: "/experience",
+                        url: `${APP_BASE}/experience`,
                       },
                     },
                   ],
