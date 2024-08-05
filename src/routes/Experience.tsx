@@ -542,14 +542,14 @@ function Experience() {
                               ...COMMON_LIST_PROPS,
                               types: ["p", "bold"],
                               tagName: "span",
-                            }
+                            },
                           },
                           {
                             content: {
                               text: " of boreholes in their excavation sites using ",
                               ...COMMON_LIST_PROPS,
                               tagName: "span",
-                            }
+                            },
                           },
                           {
                             content: {
@@ -557,14 +557,14 @@ function Experience() {
                               ...COMMON_LIST_PROPS,
                               types: ["p", "bold"],
                               tagName: "span",
-                            }
+                            },
                           },
                           {
                             content: {
                               text: " This allows ",
                               ...COMMON_LIST_PROPS,
                               tagName: "span",
-                            }
+                            },
                           },
                           {
                             content: {
@@ -572,16 +572,16 @@ function Experience() {
                               ...COMMON_LIST_PROPS,
                               types: ["p", "bold"],
                               tagName: "span",
-                            }
+                            },
                           },
                           {
                             content: {
                               text: " to interact with their excavation sites on the web.",
                               ...COMMON_LIST_PROPS,
                               tagName: "span",
-                            }
-                          }
-                        ]
+                            },
+                          },
+                        ],
                       },
                     },
                     {
@@ -595,14 +595,14 @@ function Experience() {
                               ...COMMON_LIST_PROPS,
                               types: ["p", "bold"],
                               tagName: "span",
-                            }
+                            },
                           },
                           {
                             content: {
                               text: " to render tiles of terrains so that users could view their site in its actual location. This involved a ",
                               ...COMMON_LIST_PROPS,
                               tagName: "span",
-                            }
+                            },
                           },
                           {
                             content: {
@@ -610,16 +610,16 @@ function Experience() {
                               ...COMMON_LIST_PROPS,
                               types: ["p", "bold"],
                               tagName: "span",
-                            }
+                            },
                           },
                           {
                             content: {
                               text: " to position the model in the correct location relative to the terrain as well as ensure that the terrain fit into the modeling coordinate system.",
                               ...COMMON_LIST_PROPS,
                               tagName: "span",
-                            }
-                          }
-                        ]
+                            },
+                          },
+                        ],
                       },
                     },
                     {
@@ -633,16 +633,16 @@ function Experience() {
                               ...COMMON_LIST_PROPS,
                               types: ["p", "bold"],
                               tagName: "span",
-                            }
+                            },
                           },
                           {
                             content: {
                               text: " like DXF (AutoCAD) and KMZ (Google Earth). This allows users to use other software to view their models.",
                               ...COMMON_LIST_PROPS,
                               tagName: "span",
-                            }
+                            },
                           },
-                        ]
+                        ],
                       },
                     },
                     {
@@ -656,9 +656,9 @@ function Experience() {
                               ...COMMON_LIST_PROPS,
                               types: ["p", "bold"],
                               tagName: "span",
-                            }
-                          }
-                        ]
+                            },
+                          },
+                        ],
                       },
                     },
                     {
@@ -672,16 +672,16 @@ function Experience() {
                               ...COMMON_LIST_PROPS,
                               types: ["p", "bold"],
                               tagName: "span",
-                            }
+                            },
                           },
                           {
                             content: {
                               text: " so that users could load in images (png/jpg/svg) files into their 3D model terrain and view them along with their site.",
                               ...COMMON_LIST_PROPS,
                               tagName: "span",
-                            }
-                          }
-                        ]
+                            },
+                          },
+                        ],
                       },
                     },
                   ],
@@ -746,16 +746,16 @@ function Experience() {
                               ...COMMON_LIST_PROPS,
                               types: ["p", "bold"],
                               tagName: "span",
-                            }
+                            },
                           },
                           {
                             content: {
                               text: " on the web rather than in person. This makes it easier to illustrate concepts to students no matter where they are.",
                               ...COMMON_LIST_PROPS,
                               tagName: "span",
-                            }
+                            },
                           },
-                        ]
+                        ],
                       },
                     },
                     {
@@ -769,16 +769,16 @@ function Experience() {
                               ...COMMON_LIST_PROPS,
                               types: ["p", "bold"],
                               tagName: "span",
-                            }
+                            },
                           },
                           {
                             content: {
                               text: " One example of this is the Navier-Stokes equations which allows one to use partial differential equations to solve for the flow velocity of viscous fluids.",
                               ...COMMON_LIST_PROPS,
                               tagName: "span",
-                            }
-                          }
-                        ]
+                            },
+                          },
+                        ],
                       },
                     },
                     {
@@ -792,16 +792,16 @@ function Experience() {
                               ...COMMON_LIST_PROPS,
                               types: ["p", "bold"],
                               tagName: "span",
-                            }
+                            },
                           },
                           {
                             content: {
                               text: " so that students could measure things like temperature, velocity, and pressure in different parts of the experiment simultaneously.",
                               ...COMMON_LIST_PROPS,
                               tagName: "span",
-                            }
+                            },
                           },
-                        ]
+                        ],
                       },
                     },
                   ],
@@ -859,16 +859,16 @@ function Experience() {
                               ...COMMON_LIST_PROPS,
                               types: ["p", "bold"],
                               tagName: "span",
-                            }
+                            },
                           },
                           {
                             content: {
                               text: " of sheep all across Canada. The goal of this is to eliminate the paper trail of where sheep are in the country and give farmers and inspectors access to a system so that they know where their sheep are all the time.",
                               ...COMMON_LIST_PROPS,
                               tagName: "span",
-                            }
+                            },
                           },
-                        ]
+                        ],
                       },
                     },
                     {
@@ -882,7 +882,7 @@ function Experience() {
                               text: "for data storage in MongoDB and performed ",
                               ...COMMON_LIST_PROPS,
                               tagName: "span",
-                            }
+                            },
                           },
                           {
                             content: {
@@ -890,14 +890,14 @@ function Experience() {
                               ...COMMON_LIST_PROPS,
                               types: ["p", "bold"],
                               tagName: "span",
-                            }
+                            },
                           },
                           {
                             content: {
                               text: " to generate sheep traceability reports. This improved the traceability algorithm ",
                               ...COMMON_LIST_PROPS,
                               tagName: "span",
-                            }
+                            },
                           },
                           {
                             content: {
@@ -905,9 +905,9 @@ function Experience() {
                               ...COMMON_LIST_PROPS,
                               types: ["p", "bold"],
                               tagName: "span",
-                            }
+                            },
                           },
-                        ]
+                        ],
                       },
                     },
                     {
