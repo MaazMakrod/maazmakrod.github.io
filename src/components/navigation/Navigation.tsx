@@ -4,6 +4,7 @@ import { Text } from "../text";
 import { COLORS, NAVIGATION_HEIGHT } from "../../styles/theme";
 import { PathMatch } from "react-router-dom";
 import { BREAKPOINTS, mapCssToBreakpoints } from "../../styles/helpers";
+import { APP_BASE } from "../../utils/constants";
 type NavLink = {
   text: string;
   url: string;
@@ -44,7 +45,7 @@ const Navigation: React.FC<NavigationProps> = ({ links, activeLink }) => {
           text="Maaz Makrod"
           types={["h1", "bold"]}
           tagName="a"
-          url="/"
+          url={APP_BASE}
           margin="0"
           color="inherit"
           disabled={Boolean(activeLink[links?.[0]?.text])}

@@ -16,6 +16,7 @@ import {
 import { CardWrapperProps } from "../components/card-wrapper/CardWrapper";
 import { IconProps } from "../components/icon/Icon";
 import { CardGridProps } from "../components/card-grid/CardGrid";
+import { APP_BASE } from "../utils/constants";
 
 function Home() {
   const homePageArgs = {
@@ -108,7 +109,7 @@ function Home() {
               icon: {
                 ...ICON_DEFAULT_PROPS["primary"],
                 SvgImage: Link,
-                url: "/about",
+                url: `${APP_BASE}/about`,
                 position: {
                   bottom: 5,
                   right: 10,
@@ -166,7 +167,7 @@ function Home() {
               icon: {
                 ...ICON_DEFAULT_PROPS["primary"],
                 SvgImage: Link,
-                url: "/experience",
+                url: `${APP_BASE}/experience`,
                 position: {
                   top: 5,
                   left: 5,
@@ -598,7 +599,7 @@ function Home() {
               icon: {
                 ...ICON_DEFAULT_PROPS["primary"],
                 SvgImage: Link,
-                url: "/projects",
+                url: `${APP_BASE}/projects`,
                 position: {
                   bottom: 5,
                   right: 5,

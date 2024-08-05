@@ -5,6 +5,7 @@ import Layout from "./routes/Layout";
 import Experience from "./routes/Experience";
 import About from "./routes/About";
 import Projects from "./routes/Projects";
+import { APP_BASE } from "./utils/constants";
 
 function App() {
   const router = createBrowserRouter([
@@ -31,7 +32,7 @@ function App() {
         },
       ],
     },
-  ]);
+  ], { basename: APP_BASE });
 
   return <RouterProvider router={router} />;
 }

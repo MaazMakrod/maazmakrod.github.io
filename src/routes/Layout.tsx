@@ -3,23 +3,24 @@ import { Footer } from "../components/footer";
 import { Navigation } from "../components/navigation";
 import { File, Github, Linkedin, Mail } from "../icons";
 import resume from "../assets/Maaz_Makrod_Resume.pdf";
+import { APP_BASE } from "../utils/constants";
 
 const NAVIGATION_LINKS = [
   {
     text: "Home",
-    url: "/",
+    url: APP_BASE,
   },
   {
     text: "Experience",
-    url: "/experience",
+    url: `${APP_BASE}/experience`,
   },
   {
     text: "Projects",
-    url: "/projects",
+    url: `${APP_BASE}/projects`,
   },
   {
     text: "About",
-    url: "/about",
+    url: `${APP_BASE}/about`,
   },
 ];
 
