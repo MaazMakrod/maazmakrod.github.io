@@ -9,6 +9,7 @@ import React, {
 import styled from "styled-components";
 import {
   BREAKPOINTS,
+  isSafari,
   mapCssToBreakpoints,
   mapStylesValuesToBreakpoints,
   Position,
@@ -18,6 +19,7 @@ import buildStyles, { buildSlideStyles } from "./styles";
 import { Play, Pause } from "../../icons";
 import { Icon } from "../icon";
 import { HoverOptions } from "../icon/styles";
+import { scrollIntoView } from "seamless-scroll-polyfill";
 
 type PlayPauseBtnProps = {
   width: StylesValue;
@@ -98,11 +100,20 @@ const CarouselCard: React.FC<CarouselCardProps> = ({
   const scrollNextCardIntoView = useCallback(() => {
     currentSlideIndex.current = (currentSlideIndex.current + 1) % slides.length;
     setActiveSlideIdx(currentSlideIndex.current);
-    slideRefs.current[currentSlideIndex.current]?.scrollIntoView({
-      behavior: "smooth",
-      block: "nearest",
-      inline: "center",
-    });
+
+    if (isSafari) {
+      scrollIntoView(slideRefs.current[currentSlideIndex.current] as Element, {
+        behavior: "smooth",
+        block: "nearest",
+        inline: "center",
+      });
+    } else {
+      slideRefs.current[currentSlideIndex.current]?.scrollIntoView({
+        behavior: "smooth",
+        block: "nearest",
+        inline: "center",
+      });
+    }
   }, [currentSlideIndex, slides.length]);
 
   useMemo(() => {

@@ -1,5 +1,6 @@
 import {
   BREAKPOINTS,
+  isSafari,
   mapCssToBreakpoints,
   mapStylesValuesToBreakpoints,
   StylesValue,
@@ -15,7 +16,7 @@ export const buildSlideStyles = (width: StylesValue, height: StylesValue) => {
 
   styles[BREAKPOINTS.DEFAULT] = {
     ...styles[BREAKPOINTS.DEFAULT],
-    "scroll-snap-align": "center",
+    ...(!isSafari && {"scroll-snap-align": "center"}),
     "flex-shrink": 0,
   };
 
