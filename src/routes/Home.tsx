@@ -403,6 +403,7 @@ function Home() {
                     bottom: 10,
                     right: 10,
                   },
+                  target: '_blank',
                   ...ICON_DEFAULT_PROPS["primary"],
                 } as IconProps,
                 overlay: (
@@ -500,6 +501,7 @@ function Home() {
                     top: 10,
                     right: 10,
                   },
+                  target: '_blank',
                   ...ICON_DEFAULT_PROPS["primary"],
                 } as IconProps,
                 overlay: (
