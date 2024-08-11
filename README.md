@@ -1,30 +1,18 @@
-# React + TypeScript + Vite
+# My Portfolio Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to my portfolio website repository!
 
-Currently, two official plugins are available:
+# Timeline
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+My current website design (V4) is available [here](https://maazmakrod.github.io/)!
 
-## Expanding the ESLint configuration
+Here's a video of V3 of my website:
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+https://github.com/user-attachments/assets/dc987905-f93b-4524-b876-747b0999c75a
 
-- Configure the top-level `parserOptions` property like this:
+Unfortunately, I do not have a video of V2 of my website with content, but here is a video of what its overall design was like:
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json', './tsconfig.app.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+https://github.com/user-attachments/assets/ca44a7d3-f266-49c0-a87b-cab3594a0811
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+And I'm sad to say I've lost all evidence that V1 of my website existed :(.
+
