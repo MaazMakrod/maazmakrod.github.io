@@ -6,3 +6,4 @@ export { default as Linkedin } from "./linkedin";
 export { default as Mail } from "./mail";
 export { default as Pause } from "./pause";
 export { default as Play } from "./play";
+export { default as Transcript } from "./transcript";

@@ -1,8 +1,9 @@
 import { Outlet, useLocation, useMatch } from "react-router-dom";
 import { Footer } from "../components/footer";
 import { Navigation } from "../components/navigation";
-import { File, Github, Linkedin, Mail } from "../icons";
+import { File, Github, Linkedin, Mail, Transcript } from "../icons";
 import resume from "../assets/Maaz_Makrod_Resume.pdf";
+import transcript from "../assets/Maaz_Makrod_Official_Transcript.pdf";
 import { APP_BASE } from "../utils/constants";
 
 const NAVIGATION_LINKS = [
@@ -40,6 +41,10 @@ const FOOTER_LINKS = [
   {
     svg: File,
     url: resume,
+  },
+  {
+    svg: Transcript,
+    url: transcript,
   },
 ];
 
